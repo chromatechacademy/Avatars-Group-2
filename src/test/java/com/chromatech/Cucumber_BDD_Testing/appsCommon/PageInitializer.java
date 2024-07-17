@@ -12,7 +12,6 @@ public class PageInitializer {
      * PAGE OBJECTS
      */
 
-
     public static void initializeAllPages() {
     }
 
@@ -24,16 +23,13 @@ public class PageInitializer {
     @FindBy(xpath = "//input[@id='form-username']")
     public WebElement usernameTextBox;
 
-
     //*Password Text box*//
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordTextBox;
 
-
     //*Sign In Button*//
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInButton;
-
 
     //*Alert Message*//
     @FindBy(xpath = "//div[@class='alert alert-danger']")
