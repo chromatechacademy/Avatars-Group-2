@@ -16,12 +16,16 @@ public class PageInitializer {
     public static void initializeAllPages() {
     }
 
-    /* USERNAME TEXT BOX */
-    @FindBy(xpath = "//input[@id='form-username']")
-    public WebElement usernameTextBox;
-
-    public PageInitializer(){
+    public PageInitializer() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
+    @FindBy(xpath = "//input[@id='form-username']")
+    public WebElement usernameTextBox;
+
+    @FindBy(xpath = "//input[@placeholder='Password']")
+    public WebElement passwordTextBox;
+
+    @FindBy(xpath = "//button[normalize-space()='Sign In']")
+    public WebElement signInButton;
 }
