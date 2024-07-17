@@ -20,24 +20,19 @@ Feature: Admit A Student With A Unique Admission Number Scenario
     And selects "Selenium" from category drop down
     And enters email "emma.johnson@gmail.com"
     And selects "07/17/2024" for Admission Date Calendar Day
-
-
-
-
-
-
-
-
-#    And enters father name "<Father Name>"
-#    And selects Father radio button for If guardian is field
-#    And enters guardian phone number "<Guardian Phone Number>"
-#    And saves submission
-#    Then test account is reset with admission number "<Admission Number>", class "SDET", section "Cucumber Fundamentals"
-
-
-
-
-
-#    Given a CTSMS user is logged in to the Student Admission page
-#    When the user fills out all required fields with a unique admission number
-#    Then the student is successfully admitted
+    And selects "B+" from Blood Group drop down
+    And selects "07/17/2024" for As on Date Calendar Day
+#    And enters a phone number "337-428-9641"
+    And enters a height "5'4"
+    And enters a weight "105"
+    And enters father name "Carl"
+    And enters father phone number "347-982-8725"
+    And enters father occupation "Doctor"
+    And enters mother name "Rebecca"
+    And enters mother phone number "348-926-9265"
+    And enters mother email "rebecca.johnson@gmail.com"
+    And enters mother occupation "Nurse"
+    And selects Mother radio button for If guardian is field
+    And enters guardian address "1067 Madison Ave, New York, NY 10028"
+    And saves submission
+    Then the student is successfully admitted "Record Saved Successfully"

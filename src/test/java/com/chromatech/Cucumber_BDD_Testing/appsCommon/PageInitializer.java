@@ -84,5 +84,69 @@ public class PageInitializer {
     @FindBy(xpath = "//input[@id='admission_date']")
     public WebElement admissionDateDayPicker;
 
+    /*BLOOD GROUP DROP DOWN*/
+    @FindBy(xpath = "//select[@name='blood_group']")
+    public WebElement bloodGroupDropDown;
+
+    /*AS ON DATE DAY PICKER*/
+    @FindBy(xpath = "//input[@id='admission_date']")
+    public WebElement asOnDateDayPicker;
+
+    /*PHONE NUMBER TEXT BOX*/
+    @FindBy(xpath = "(//input[@id='custom_fields[students][1]'])[1]")
+    public WebElement phoneNumberTextBox;
+
+    /*HEIGHT TEXT BOX*/
+    @FindBy(xpath = "(//input[@id='custom_fields[students][2]'])[1]")
+    public WebElement heightTextBox;
+
+    /*WEIGHT TEXT BOX*/
+    @FindBy(xpath = "(//input[@id='custom_fields[students][3]'])[1]")
+    public WebElement weightTextBox;
+
+    /*MOTHER NAME TEXT BOX*/
+    @FindBy(xpath = "//input[@id='mother_name']")
+    public WebElement motherNameTextBox;
+
+    /*MOTHER PHONE NUMBER TEXT BOX*/
+    @FindBy(xpath = "//input[@id='mother_phone']")
+    public WebElement motherPhoneNumberTextBox;
+
+    /*MOTHER OCCUPATION TEXT BOX*/
+    @FindBy(xpath = "//input[@id='mother_occupation']")
+    public WebElement motherOccupationTextBox;
+
+    /*RADIO BUTTON MOTHER*/
+    @FindBy(xpath = "//input[@value='mother']")
+    public WebElement radioButtonMother;
+
+    /*GUARDIAN ADDRESS TEXT BOX*/
+    @FindBy(xpath = "//textarea[@id='guardian_address']")
+    public WebElement guardianAddressTextBox;
+
+    /*SAVE BUTTON*/
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
+    public WebElement saveButton;
+
+    /*MOTHER EMAIL TEXT BOX*/
+    @FindBy(xpath = "//input[@id='guardian_email']")
+    public WebElement motherEmailTextbox;
+
+    /*FATHER NAME TEXT BOX*/
+    @FindBy(xpath = "//input[@id='father_name']")
+    public WebElement fatherNameTextbox;
+
+    /*FATHER PHONE NUMBER TEXT BOX*/
+    @FindBy(xpath = "//input[@id='father_phone']")
+    public WebElement fatherPhoneNumberTextbox;
+
+    /*FATHER OCCUPATION TEXT BOX*/
+    @FindBy(xpath = "//input[@id='father_occupation']")
+    public WebElement fatherOccupationTextbox;
+
+    /*ALER SUCCSES TEXT*/
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement actualText;
+
 
 }
