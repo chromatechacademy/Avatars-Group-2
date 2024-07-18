@@ -20,12 +20,15 @@ public class PageInitializer {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
+    /*USERNAME TEXT BOX*/
     @FindBy(xpath = "//input[@id='form-username']")
     public WebElement usernameTextBox;
 
+    /*PASSWORD TEXT BOX*/
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordTextBox;
 
+    /*SIGN IN BUTTON*/
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInButton;
 }
