@@ -12,20 +12,10 @@ public class PageInitializer {
      * PAGE OBJECTS
      */
 
+    public static LoginPage loginPage;
 
     public static void initializeAllPages() {
+        loginPage = new LoginPage();
     }
 
-    public PageInitializer() {
-        PageFactory.initElements(WebDriverUtils.driver, this);
-    }
-
-    @FindBy(xpath = "//input[@id='form-username']")
-    public WebElement usernameTextBox;
-
-    @FindBy(xpath = "//input[@placeholder='Password']")
-    public WebElement passwordTextBox;
-
-    @FindBy(xpath = "//button[normalize-space()='Sign In']")
-    public WebElement signInButton;
 }
