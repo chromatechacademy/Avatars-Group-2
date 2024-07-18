@@ -1,5 +1,7 @@
 package com.chromatech.Cucumber_BDD_Testing.appsCommon;
 
+import com.chromatech.utils.WebDriverUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -123,7 +125,37 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@id='father_occupation']")
     public WebElement fatherOccupationTextbox;
 
-    /*ALERT SUCCSESS TEXT*/
+    /*ALERT SUCCESS TEXT*/
     @FindBy(xpath = "//div[@class='alert alert-success']")
-    public WebElement actualAlertSuccsessText;
+    public WebElement actualAlertSuccessText;
+
+    /*BULK DELETE SUB MODULE*/
+    @FindBy(xpath = "//a[normalize-space()='Bulk Delete']")
+    public WebElement bulkDeleteSubModule;
+
+    /*CLASS DROP DOWN*/
+    @FindBy(xpath = "//select[@id='class_id']")
+    public WebElement classDropDownBox;
+
+    /*SECTION DROP DOWN*/
+    @FindBy(xpath = "//select[@id='section_id']")
+    public WebElement sectionDropDownBox;
+
+    /*SEARCH BUTTON*/
+    @FindBy(xpath = "//button[normalize-space()='Search']")
+    public WebElement searchButton;
+
+    /*DELETE BUTTON*/
+    @FindBy(xpath = "//button[@id='load']")
+    public WebElement deleteButton;
+
+    /**
+     * Finds and returns the WebElement of the dynamic delete record locator based on the provided text.
+     *
+     * @param text the text to be searched for in the record locator
+     * @return the WebElement that represents the delete record locator
+     */
+    public static WebElement dynamicLocator(String text) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//parent::tr/td/input"));
+    }
 }

@@ -35,3 +35,10 @@ Feature: Student Admission Scenario
     And enters guardian address "1067 Madison Ave, New York, NY 10028"
     And saves submission
     Then the student is successfully admitted "Record Saved Successfully"
+    And user clicks on the Bulk Delete submodule
+    And selects "SDET" for the class drop-down
+    And selects "Cucumber Fundamentals" for the section drop-down
+    And clicks on the Search button
+    When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
+    And clicks on the checkbox with the unique admission number "007"
+    And clicks the Delete button and accepting alert "Are you sure you want to delete this?"

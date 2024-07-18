@@ -184,12 +184,52 @@ public class Student_Admission_Steps {
     @Then("the student is successfully admitted {string}")
     public void the_student_is_successfully_admitted(String expectedAlertSuccsessText) {
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(studentAdmissionPage.actualAlertSuccsessText.getText(), expectedAlertSuccsessText);
+        CommonMethods.assertEquals(studentAdmissionPage.actualAlertSuccessText.getText(), expectedAlertSuccsessText);
     }
 
     @When("the user is on the {string} page")
     public void the_user_is_on_the_page(String urlPage) {
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(driver.getCurrentUrl(), urlPage);
+    }
+
+    @Then("user clicks on the Bulk Delete submodule")
+    public void user_clicks_on_the_bulk_delete_submodule() {
+        CommonMethods.click(studentAdmissionPage.bulkDeleteSubModule);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("selects {string} for the class drop-down")
+    public void selects_for_the_class_drop_down(String sdetText) {
+        CommonMethods.selectDropDownValue(sdetText, studentAdmissionPage.classDropDownBox);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("selects {string} for the section drop-down")
+    public void selects_for_the_section_drop_down(String cucumberFundamentalsText) {
+        CommonMethods.selectDropDownValue(cucumberFundamentalsText, studentAdmissionPage.sectionDropDownBox);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("clicks on the Search button")
+    public void clicks_on_the_search_button() {
+        CommonMethods.click(studentAdmissionPage.searchButton);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @When("clicks on the checkbox with the unique admission number {string}")
+    public void clicks_on_the_checkbox_with_the_unique_admission_number(String uniqAdmissionNumber) {
+        CommonMethods.click(studentAdmissionPage.dynamicLocator(uniqAdmissionNumber));
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @When("clicks the Delete button and accepting alert {string}")
+    public void clicks_the_delete_button_and_accepting_alert(String expectedAlertText) {
+        JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
+        CommonMethods.click(studentAdmissionPage.deleteButton);
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+        CommonMethods.acceptAlert();
+        JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
+        CucumberLogUtils.logScreenShot();
     }
 }
