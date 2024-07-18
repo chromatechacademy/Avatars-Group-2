@@ -61,17 +61,17 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@id='email']")
     public WebElement emailTextBox;
 
-    /*ADMISSION DATE DAY PICKER*/
+    /*ADMISSION DATE PICKER*/
     @FindBy(xpath = "//input[@id='admission_date']")
-    public WebElement admissionDateDayPicker;
+    public WebElement admissionDatePicker;
 
     /*BLOOD GROUP DROP DOWN*/
     @FindBy(xpath = "//select[@name='blood_group']")
     public WebElement bloodGroupDropDown;
 
-    /*AS ON DATE DAY PICKER*/
+    /*AS ON DATE PICKER*/
     @FindBy(xpath = "//input[@id='admission_date']")
-    public WebElement asOnDateDayPicker;
+    public WebElement asOnDatePicker;
 
     /*PHONE NUMBER TEXT BOX*/
     @FindBy(xpath = "(//input[@id='custom_fields[students][1]'])[1]")

@@ -86,7 +86,7 @@ public class Student_Admission_Steps {
 
     @When("selects {string} for Admission Date Calendar Day")
     public void selects_for_admission_date_calendar_day(String admissionDateText) {
-        JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDateDayPicker, admissionDateText);
+        JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDatePicker, admissionDateText);
         CucumberLogUtils.logScreenShot();
     }
 
@@ -98,7 +98,7 @@ public class Student_Admission_Steps {
 
     @When("selects {string} for As on Date Calendar Day")
     public void selects_for_as_on_date_calendar_day(String asOnDateText) {
-        JavascriptMethods.selectDateByJS(studentAdmissionPage.asOnDateDayPicker, asOnDateText);
+        JavascriptMethods.selectDateByJS(studentAdmissionPage.asOnDatePicker, asOnDateText);
         CucumberLogUtils.logScreenShot();
     }
 
