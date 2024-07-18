@@ -182,9 +182,9 @@ public class Student_Admission_Steps {
     }
 
     @Then("the student is successfully admitted {string}")
-    public void the_student_is_successfully_admitted(String expectedAlertSuccsessText) {
+    public void the_student_is_successfully_admitted(String expectedAlertSuccessText) {
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(studentAdmissionPage.actualAlertSuccessText.getText(), expectedAlertSuccsessText);
+        CommonMethods.assertEquals(studentAdmissionPage.actualAlertSuccessText.getText(), expectedAlertSuccessText);
     }
 
     @When("the user is on the {string} page")
