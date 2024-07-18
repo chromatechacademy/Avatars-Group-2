@@ -128,14 +128,3 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement actualAlertSuccsessText;
 }
-
-
-
-
-
-
-
-
-
-
-

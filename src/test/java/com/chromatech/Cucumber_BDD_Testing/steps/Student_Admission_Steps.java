@@ -194,26 +194,3 @@ public class Student_Admission_Steps {
         CommonMethods.assertEquals(driver.getCurrentUrl(), urlPage);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
