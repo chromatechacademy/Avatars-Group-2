@@ -1,6 +1,6 @@
 Feature: User Logs In With Invalid Credentials Scenario
 
-  @Smoke
+  @Regression @AG2CP-2 @yuriy
   Scenario: User Log In Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "private@teacher.com" in username text box
