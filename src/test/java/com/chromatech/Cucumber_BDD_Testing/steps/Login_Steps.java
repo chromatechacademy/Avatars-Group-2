@@ -1,11 +1,9 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
-import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.WebDriverUtils;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
+
 
 public class Login_Steps {
 
@@ -16,11 +14,4 @@ public class Login_Steps {
         WebDriverUtils.setUp();
         WebDriverUtils.driver.get(url);
     }
-    @When("the user enters{string} in udername text box")
-    public void the_user_enters_username_in_udername_text_box(String usernameText){
-        pageInitializer.usernameTextBox.sendKeys(usernameText);
-        CommonMethods.waitForVisibility(pageInitializer.usernameTextBox);
-        CommonMethods.sendKeys(pageInitializer.usernameTextBox, usernameText);
-    }
-
 }
