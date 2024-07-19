@@ -14,9 +14,8 @@ public class Human_Resource_module_Steps {
     @When("the user clicks on the Human Resource module")
     public void the_user_clicks_on_the_human_resource_module() {
         JavascriptMethods.scrollDown(200);
-        CommonMethods.sleep(2000);
+        CommonMethods.waitForClickability(humanResourceModule.humanResourceButton);
         humanResourceModule.humanResourceButton.click();
-        CommonMethods.sleep(2000);
         CucumberLogUtils.logScreenShot();
     }
 
