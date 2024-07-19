@@ -20,15 +20,15 @@ public class Human_Resource_module_Steps {
     }
 
     @Then("the following submodules are displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void the_following_submodules_are_displayed(String staffDirectorySubModule, String staffAttendanceSubModule, String payrollSubModule, String approveLeaveRequestSubModule, String applyLeaveSubModule, String leaveTypeSubModule, String teachersRatingSubModule, String departmentSubModule, String designationSubModule) {
-        CommonMethods.assertEquals(humanResourceModule.staffDirectorySubModule.getText(), "Staff Directory");
-        CommonMethods.assertEquals(humanResourceModule.staffAttendanceSubModule.getText(), "Staff Attendance");
-        CommonMethods.assertEquals(humanResourceModule.payrollSubModule.getText(), "Payroll");
-        CommonMethods.assertEquals(humanResourceModule.approveLeaveRequestSubModule.getText(), "Approve Leave Request");
-        CommonMethods.assertEquals(humanResourceModule.applyLeaveSubModule.getText(), "Apply Leave");
-        CommonMethods.assertEquals(humanResourceModule.leaveTypeSubModule.getText(), "Leave Type");
-        CommonMethods.assertEquals(humanResourceModule.teachersRatingSubModule.getText(), "Teachers Rating");
-        CommonMethods.assertEquals(humanResourceModule.departmentSubModule.getText(), "Department");
-        CommonMethods.assertEquals(humanResourceModule.designationSubModule.getText(), "Designation");
+    public void the_following_submodules_are_displayed(String expectedStaffDirectoryText, String expectedStaffAttendanceText, String expectedPayrollText, String expectedApproveLeaveRequestText, String expectedApplyLeaveText, String expectedLeaveTypeText, String expectedTeachersRatingText, String expectedDepartmentText, String expectedDesignationText) {
+        CommonMethods.assertEquals(humanResourceModule.staffDirectorySubModule.getText(), expectedStaffDirectoryText);
+        CommonMethods.assertEquals(humanResourceModule.staffAttendanceSubModule.getText(), expectedStaffAttendanceText);
+        CommonMethods.assertEquals(humanResourceModule.payrollSubModule.getText(), expectedPayrollText);
+        CommonMethods.assertEquals(humanResourceModule.approveLeaveRequestSubModule.getText(), expectedApproveLeaveRequestText);
+        CommonMethods.assertEquals(humanResourceModule.applyLeaveSubModule.getText(), expectedApplyLeaveText);
+        CommonMethods.assertEquals(humanResourceModule.leaveTypeSubModule.getText(), expectedLeaveTypeText);
+        CommonMethods.assertEquals(humanResourceModule.teachersRatingSubModule.getText(), expectedTeachersRatingText);
+        CommonMethods.assertEquals(humanResourceModule.departmentSubModule.getText(), expectedDepartmentText);
+        CommonMethods.assertEquals(humanResourceModule.designationSubModule.getText(), expectedDesignationText);
     }
 }
