@@ -3,8 +3,10 @@ package com.chromatech.Cucumber_BDD_Testing.appsCommon;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class DashboardPage {
@@ -45,6 +47,13 @@ public class DashboardPage {
         PageFactory.initElements(driver, this);
     }
 
+    /**
+     * Retrieves the text of the student information submodules from the dashboard page.
+     * This method locates various student information submodules on the dashboard page,
+     * retrieves their text content, and returns it as a list of strings.
+     *
+     * @return a list of strings, each representing the text of a student information submodule.
+     */
     public List<String> getStudentInformationSubmodulesText() {
         List<String> submodulesText = new ArrayList<>();
         submodulesText.add(studentDetails.getText());
