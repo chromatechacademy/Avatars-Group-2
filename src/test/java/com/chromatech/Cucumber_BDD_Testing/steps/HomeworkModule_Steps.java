@@ -1,0 +1,28 @@
+package com.chromatech.Cucumber_BDD_Testing.steps;
+
+
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.HomeworkModule;
+import com.chromatech.utils.CommonMethods;
+import com.chromatech.utils.CucumberLogUtils;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+
+public class HomeworkModule_Steps {
+
+    HomeworkModule homeworkModule = new HomeworkModule();
+
+    @When("the user clicks on the Homework module")
+    public void the_user_clicks_on_the_homework_module() {
+        homeworkModule.homeworkBtn.click();
+        CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("the following module displays: {string}")
+    public void the_following_module_displays(String addHomeworkBtn) {
+        CommonMethods.assertEquals(homeworkModule.addHomeworkBtn.getText(), "Add Homework");
+        CucumberLogUtils.logScreenShot();
+    }
+
+
+}
