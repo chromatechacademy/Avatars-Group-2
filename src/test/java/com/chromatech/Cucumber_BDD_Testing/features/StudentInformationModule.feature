@@ -9,10 +9,10 @@ Feature: Student Information Module
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When the user clicks on the Student Information module
     Then the following submodules display:
-      | Student Details       |
-      | Student Admission     |
-      | Disabled Students     |
-      | Bulk Delete           |
-      | Student Categories    |
-      | Student House         |
-      | Disable Reason        |
+      | Student Details    |
+      | Student Admission  |
+      | Disabled Students  |
+      | Bulk Delete        |
+      | Student Categories |
+      | Student House      |
+      | Disable Reason     |

@@ -27,7 +27,7 @@ public class Student_Information_Module_Steps {
 
     @Then("the following submodules display:")
     public void the_following_submodules_display(List<String> expectedSubmodules) {
-        List<String> actualSubmodules = dashboardPage.getStudentInformationSubmodulesText();
+        List<String> actualSubmodules = dashboardPage.getStudentSubModulesText();
         for (int i = 0; i < expectedSubmodules.size(); i++) {
             String expectedSubModuleText = expectedSubmodules.get(i);
             String actualSubModuleText = actualSubmodules.get(i);
@@ -35,5 +35,4 @@ public class Student_Information_Module_Steps {
         }
         CucumberLogUtils.logScreenShot();
     }
-
 }
