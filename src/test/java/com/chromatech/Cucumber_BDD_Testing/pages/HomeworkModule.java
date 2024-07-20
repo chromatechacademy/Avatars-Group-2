@@ -10,11 +10,11 @@ public class HomeworkModule {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    /*Homework Button*/
+    /* Homework Button */
     @FindBy(xpath = "//span[normalize-space()='Homework']")
     public WebElement homeworkBtn;
 
-    /*Add Homework Button*/
+    /* Add Homework Button */
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement addHomeworkBtn;
 }

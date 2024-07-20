@@ -17,6 +17,7 @@ public class HomeworkModule_Steps {
         homeworkModule.homeworkBtn.click();
         CucumberLogUtils.logScreenShot();
     }
+
     @Then("the following module displays: {string}")
     public void the_following_module_displays(String addHomeworkBtn) {
         CommonMethods.assertEquals(homeworkModule.addHomeworkBtn.getText(), addHomeworkBtn);
