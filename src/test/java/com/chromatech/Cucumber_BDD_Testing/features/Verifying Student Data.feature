@@ -1,7 +1,7 @@
-Feature: Student Admission Scenario
+Feature: Verifying Student Data Scenario
 
-  @Regression @AG2CP-12 @ira
-  Scenario: Student Admission Scenario
+#  @Regression @AG2CP-27 @ira
+  Scenario: Verifying Student Data Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
     And enters password "123456" in the password text box
@@ -9,11 +9,11 @@ Feature: Student Admission Scenario
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Student Information module
     And clicks on Student Admission sub module
-    And enters Unique Admission Number "007"
+    And enters Unique Admission Number "911"
     And enters Roll Number "1233"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
-    And enters first name "Emma"
+    And enters first name "Helen"
     And enters last name "Johnson"
     And selects "Female" from gender drop down
     And selects "09/12/1999" for Date of Birth Calendar
@@ -35,10 +35,8 @@ Feature: Student Admission Scenario
     And enters guardian address "1067 Madison Ave, New York, NY 10028"
     And saves submission
     Then the student is successfully admitted "Record Saved Successfully"
-    And user clicks on the Bulk Delete submodule
-    And selects "SDET" for the class drop-down
-    And selects "Cucumber Fundamentals" for the section drop-down
+    And clicks on Student Details sub module
+    And selects "SDET" for class drop down
+    And selects "Cucumber Fundamentals" for section drop down
     And clicks on the Search button
-    When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
-    And clicks on the checkbox with the unique admission number "007"
-    And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
+    Then all student data submitted with the record should display "911", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl", "09/12/1999", "Female", "Selenium", "5'4", "105"
