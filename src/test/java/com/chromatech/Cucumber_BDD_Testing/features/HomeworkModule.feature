@@ -9,4 +9,3 @@ Feature: Homework Module Scenario
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When the user clicks on the Homework module
     Then the following module displays: "Add Homework"
-
