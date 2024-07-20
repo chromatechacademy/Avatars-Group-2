@@ -1,4 +1,4 @@
-package com.chromatech.Cucumber_BDD_Testing.appsCommon;
+package com.chromatech.Cucumber_BDD_Testing.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
-public class DashboardPage {
+public class StudentInformationModulePage {
 
     /* STUDENT INFORMATION MODULE */
     @FindBy(xpath = "//span[normalize-space()='Student Information']")
@@ -17,7 +17,7 @@ public class DashboardPage {
     @FindBy(xpath = "//ul[@class='treeview-menu menu-open']//a")
     public List<WebElement> studentSubModules;
 
-    public DashboardPage() {
+    public StudentInformationModulePage() {
         PageFactory.initElements(driver, this);
     }
 
