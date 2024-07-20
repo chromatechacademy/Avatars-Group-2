@@ -1,4 +1,4 @@
-package com.chromatech.Cucumber_BDD_Testing.appsCommon;
+package com.chromatech.Cucumber_BDD_Testing.pages;
 
 import com.chromatech.utils.WebDriverUtils;
 import org.openqa.selenium.WebElement;
@@ -17,5 +17,4 @@ public class HomeworkModule {
     /*Add Homework Button*/
     @FindBy(xpath = "//a[normalize-space()='Add Homework']")
     public WebElement addHomeworkBtn;
-
 }
