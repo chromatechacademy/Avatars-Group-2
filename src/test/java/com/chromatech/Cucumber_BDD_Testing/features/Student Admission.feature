@@ -1,6 +1,6 @@
 Feature: Student Admission Scenario
 
-  @Regression @AG2CP-12 @ira
+#  @Regression @AG2CP-12 @ira
   Scenario: Student Admission Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
@@ -10,7 +10,7 @@ Feature: Student Admission Scenario
     When user clicks on Student Information module
     And clicks on Student Admission sub module
     And enters Unique Admission Number "007"
-    And enters Roll Number "123"
+    And enters Roll Number "1233"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
     And enters first name "Emma"

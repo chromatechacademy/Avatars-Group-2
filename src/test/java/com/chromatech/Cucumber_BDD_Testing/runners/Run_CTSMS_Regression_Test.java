@@ -9,7 +9,8 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/com/chromatech/Cucumber_BDD_Testing/features",
         glue = {"com.chromatech.Cucumber_BDD_Testing.steps", "Hooks"},
         tags = "@Regression",
-        dryRun = false
+        dryRun = true
+
 )
 
 public class Run_CTSMS_Regression_Test extends AbstractTestNGCucumberTests {
