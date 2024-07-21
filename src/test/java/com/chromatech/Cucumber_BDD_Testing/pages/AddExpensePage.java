@@ -40,6 +40,10 @@ public class AddExpensePage {
     @FindBy(xpath = "//input[@id='amount']")
     public WebElement amountTetBox;
 
+    //Attach Document
+    @FindBy(xpath = "//input[@id='documents']")
+    public WebElement attachDocument;
+
 //    //Save Button
 //    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
 //    public WebElement saveButton;
