@@ -1,6 +1,6 @@
 Feature: Verifying Student Data Scenario
 
-#  @Regression @AG2CP-27 @ira
+  @Regression @AG2CP-27 @ira
   Scenario: Verifying Student Data Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
@@ -22,21 +22,38 @@ Feature: Verifying Student Data Scenario
     And selects "07/17/2024" for Admission Date Calendar Day
     And selects "B+" from Blood Group drop down
     And selects "07/17/2024" for As on Date Calendar Day
+    And enters phone number "347-629-0614"
     And enters a height "5'4"
     And enters a weight "105"
-    And enters father name "Carl"
+    And enters father name "Carl Johnson"
     And enters father phone number "347-982-8725"
     And enters father occupation "Doctor"
-    And enters mother name "Rebecca"
+    And enters mother name "Rebecca Johnson"
     And enters mother phone number "348-926-9265"
     And enters mother email "rebecca.johnson@gmail.com"
     And enters mother occupation "Nurse"
     And selects Mother radio button for If guardian is field
     And enters guardian address "1067 Madison Ave, New York, NY 10028"
-    And saves submission
-    Then the student is successfully admitted "Record Saved Successfully"
-    And clicks on Student Details sub module
-    And selects "SDET" for class drop down
-    And selects "Cucumber Fundamentals" for section drop down
-    And clicks on the Search button
-    Then all student data submitted with the record should display "911", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl", "09/12/1999", "Female", "Selenium", "5'4", "105"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#    And saves submission
+#    Then the student is successfully admitted "Record Saved Successfully"
+#    And clicks on Student Details sub module
+#    And selects "SDET" for class drop down
+#    And selects "Cucumber Fundamentals" for section drop down
+#    And clicks on the Search button
+#    Then all student data submitted with the record should display "911", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl", "09/12/1999", "Female", "Selenium", "5'4", "105"

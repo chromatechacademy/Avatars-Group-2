@@ -1,25 +1,46 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.appsCommon.StudentAdmissionPage;
-import com.chromatech.Cucumber_BDD_Testing.appsCommon.VerifyingStudentDataPage;
+import com.chromatech.Cucumber_BDD_Testing.pages.VerifyingStudentDataPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebElement;
+import io.cucumber.java.en.When;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Verifying_Student_Data_Steps {
 
     VerifyingStudentDataPage verifyingStudentDataPage = new VerifyingStudentDataPage();
-    StudentAdmissionPage studentAdmissionPage = new StudentAdmissionPage();
 
     @Then("clicks on Student Details sub module")
     public void clicks_on_student_details_sub_module() {
         CommonMethods.click(verifyingStudentDataPage.studentDetailsSubModule);
         CucumberLogUtils.logScreenShot();
     }
+
+    @When("enters phone number {string}")
+    public void enters_phone_number(String studentPhoneNumber) {
+        CommonMethods.sendKeys(verifyingStudentDataPage.studentPhoneNumber, studentPhoneNumber);
+        CucumberLogUtils.logScreenShot();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Then("all student data submitted with the record should display {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void all_student_data_submitted_with_the_record_should_display(String expectedUniqNumberText, String expectedNameText, String expectedClassText, String expectedFathersNameText, String expectedDateOfBirthText, String expectedGenderText, String expectedCategoryText, String expectedHeightText, String expectedWeightText) {
