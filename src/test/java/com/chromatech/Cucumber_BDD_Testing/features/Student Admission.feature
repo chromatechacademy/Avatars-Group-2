@@ -10,7 +10,7 @@ Feature: Student Admission Scenario
     When user clicks on Student Information module
     And clicks on Student Admission sub module
     And enters Unique Admission Number "007"
-    And enters Roll Number "1233"
+    And enters Roll Number "123"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
     And enters first name "Emma"
