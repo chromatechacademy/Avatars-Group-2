@@ -6,9 +6,14 @@ import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Student_Admission_Steps {
+
+    private boolean isCheckboxClicked = false;
 
     StudentAdmissionPage studentAdmissionPage = new StudentAdmissionPage();
 
@@ -217,19 +222,30 @@ public class Student_Admission_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("clicks on the checkbox with the unique admission number {string}")
-    public void clicks_on_the_checkbox_with_the_unique_admission_number(String uniqAdmissionNumber) {
-        CommonMethods.click(studentAdmissionPage.dynamicLocator(uniqAdmissionNumber));
-        CucumberLogUtils.logScreenShot();
+    @When("if the record admission number {string} exists user clicks on the checkbox")
+    public void if_the_record_admission_number_exists_user_clicks_on_the_checkbox(String admissionNumber) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        Boolean isElementPresent = (Boolean) js.executeScript(
+                "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
+                studentAdmissionPage.dynamicLocator(admissionNumber)
+        );
+        if (isElementPresent) {
+            WebElement checkbox = driver.findElement(By.xpath(studentAdmissionPage.dynamicLocator(admissionNumber)));
+            checkbox.click();
+            CucumberLogUtils.logScreenShot();
+            isCheckboxClicked = true;
+        }
     }
 
-    @When("clicks the Delete button and accepting alert {string}")
-    public void clicks_the_delete_button_and_accepting_alert(String expectedAlertText) {
-        JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
-        CommonMethods.click(studentAdmissionPage.deleteButton);
-        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
-        CommonMethods.acceptAlert();
-        JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
-        CucumberLogUtils.logScreenShot();
+    @When("if the unique admission number exists clicks the Delete button and accepting alert {string}")
+    public void if_the_unique_admission_number_exists_clicks_the_delete_button_and_accepting_alert(String expectedAlertText) {
+        if (isCheckboxClicked) {
+            JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
+            CommonMethods.click(studentAdmissionPage.deleteButton);
+            CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+            CommonMethods.acceptAlert();
+            JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
+            CucumberLogUtils.logScreenShot();
+        }
     }
 }

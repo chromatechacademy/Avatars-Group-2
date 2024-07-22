@@ -5,6 +5,8 @@ import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student_Information_Module_Steps {
@@ -20,11 +22,12 @@ public class Student_Information_Module_Steps {
     @Then("the following submodules display:")
     public void the_following_submodules_display(List<String> expectedSubmodules) {
         CucumberLogUtils.logScreenShot();
-        List<String> actualSubmodules = studentInformationModulePage.getStudentSubModulesText();
+        List<String> actualSubmodules = new ArrayList<>();
+        for (WebElement element : studentInformationModulePage.studentSubModules) {
+            actualSubmodules.add(element.getText());
+        }
         for (int i = 0; i < expectedSubmodules.size(); i++) {
-            String expectedSubModuleText = expectedSubmodules.get(i);
-            String actualSubModuleText = actualSubmodules.get(i);
-            CommonMethods.assertEquals(actualSubModuleText, expectedSubModuleText);
+            CommonMethods.assertEquals(actualSubmodules.get(i), expectedSubmodules.get(i));
         }
     }
 }

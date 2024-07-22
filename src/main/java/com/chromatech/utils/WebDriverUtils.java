@@ -60,7 +60,6 @@ public class WebDriverUtils {
      * Closes the WebDriver instance and releases all associated resources.
      */
     public static void tearDown() {
-
         driver.quit();
     }
 }

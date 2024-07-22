@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class StudentAdmissionPage {
@@ -150,12 +151,12 @@ public class StudentAdmissionPage {
     public WebElement deleteButton;
 
     /**
-     * Finds and returns the WebElement of the dynamic delete record locator based on the provided text.
+     * Finds and returns the Xpath of the dynamic delete record locator based on the provided text.
      *
      * @param text the text to be searched for in the record locator
-     * @return the WebElement that represents the delete record locator
+     * @return the xpath that represents the delete record locator
      */
-    public static WebElement dynamicLocator(String text) {
-        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//parent::tr/td/input"));
+    public static String dynamicLocator(String text) {
+        return "//*[contains(text(),'" + text + "')]//parent::tr/td/input";
     }
 }
