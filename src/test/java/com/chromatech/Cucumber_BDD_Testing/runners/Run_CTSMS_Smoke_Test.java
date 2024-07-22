@@ -1,6 +1,5 @@
 package com.chromatech.Cucumber_BDD_Testing.runners;
 
-import Hooks.Hooks;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 

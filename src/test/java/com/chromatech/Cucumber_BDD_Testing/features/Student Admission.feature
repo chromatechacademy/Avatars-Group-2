@@ -50,14 +50,21 @@ Feature: Student Admission Scenario
     And clicks on the checkbox with the unique admission number "007"
     And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
 
-  @Regression @AG2CP-19 @yuriy
-  Scenario Outline: SAdmitting Multiple Students Scenario
+  @Smoke @AG2CP-19 @yuriy
+  Scenario Outline: Admitting Multiple Students Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
     And enters password "123456" in the password text box
     And clicks on Sign In button
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Student Information module
+    And user clicks on the Bulk Delete submodule
+    And selects "SDET" for the class drop-down
+    And selects "Cucumber Fundamentals" for the section drop-down
+    And clicks on the Search button
+    When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
+    And if the record admission number "<Unique Number>" exists user clicks on the checkbox
+    And if the unique admission number exists clicks the Delete button and accepting alert "Are you sure you want to delete this?"
     And clicks on Student Admission sub module
     And enters Unique Admission Number "<Unique Number>"
     And enters Roll Number "<Unique Roll Number>"
