@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
+import java.util.List;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class VerifyingStudentDataPage {
@@ -58,6 +59,45 @@ public class VerifyingStudentDataPage {
     @FindBy(xpath = "//textarea[@name='note']")
     public WebElement noteTextBox;
 
+    /*STUDENT PHOTO BOX*/
+    @FindBy(xpath = "(//input[@id='file'])[1]")
+    public WebElement studentPhotoBox;
+
+    /*FATHER PHOTO BOX*/
+    @FindBy(xpath = "(//input[@id='file'])[2]")
+    public WebElement fatherPhotoBox;
+
+    /*MOTHER PHOTO BOX*/
+    @FindBy(xpath = "(//input[@id='file'])[3]")
+    public WebElement motherPhotoBox;
+
+    /*DOCUMENT BOX 1*/
+    @FindBy(xpath = "//input[@name='first_doc']")
+    public WebElement documentBoxOne;
+
+    /*DOCUMENT BOX 2*/
+    @FindBy(xpath = "//input[@name='second_doc']")
+    public WebElement documentBoxTwo;
+
+    /*DOCUMENT BOX 3*/
+    @FindBy(xpath = "//input[@name='fourth_doc']")
+    public WebElement documentBoxThree;
+
+    /*DOCUMENT BOX 4*/
+    @FindBy(xpath = "//input[@name='fifth_doc']")
+    public WebElement documentBoxFour;
+
+    /*SEARCH BY KEYWORD TEXT BOX*/
+    @FindBy(xpath = "//input[@class='form-control']")
+    public WebElement searchByKeywordTextBox;
+
+    public static String locatorForFile(String file){
+        return System.getProperty("user.dir")+ file;
+    }
+
+    public List<WebElement> dynamicLocator(String text) {
+        return driver.findElements(By.xpath("//*[contains(text(),'" + text + "')]"));
+    }
 
     /**
      * Sends text to four documents.
@@ -78,75 +118,4 @@ public class VerifyingStudentDataPage {
             textBox.sendKeys(docs.get(i));
         }
     }
-
-    /*STUDENT PHOTO BOX*/
-    @FindBy(xpath = "(//input[@id='file'])[1]")
-    public WebElement studentPhotoBox;
-
-    /*FATHER PHOTO BOX*/
-    @FindBy(xpath = "(//input[@id='file'])[2]")
-    public WebElement fatherPhotoBox;
-
-    /*MOTHER PHOTO BOX*/
-    @FindBy(xpath = "(//input[@id='file'])[3]")
-    public WebElement motherPhotoBox;
-
-    /*DOCUMENT BOX 1*/
-    @FindBy(xpath = "(//p[contains(text(),'Drag and drop a file here or click')])[5]")
-    public WebElement documentBoxOne;
-
-    /*SEARCH BY KEYWORD TEXT BOX*/
-    @FindBy(xpath = "//input[@class='form-control']")
-    public WebElement searchByKeywordTextBox;
-
-    public static String locatorForFile(String file){
-        return System.getProperty("user.dir")+ "/" + file;
-    }
-
-
-
-
-
-
-
-
-
-
-    public static void sendFourFiles(String docOneText, String doxTwoText, String docThreeText, String docFourText) {
-        ArrayList<String> docs = new ArrayList<>();
-        docs.add(docOneText);
-        docs.add(doxTwoText);
-        docs.add(docThreeText);
-        docs.add(docFourText);
-        for (int i = 0; i < docs.size(); i++) {
-            WebElement textBoxes = driver.findElement(By.xpath("(//input[contains(@name,'title')])[" + (i + 1) + "]"));
-            textBoxes.sendKeys(docs.get(i));
-        }
-    }
-
-
-
-
-
-
-
-
-    /**
-     * Returns the WebElement based on the dynamic xpath with index.
-     *
-     * @param number The dynamic value for xpath.
-     * @return The WebElement matching the given dynamic xpath and index.
-     */
-    public static WebElement dynamicXpathByIndex(String number) {
-        return driver.findElement(By.xpath("//td[text()='" + number + "']//parent::tr/td[1]"));
-    }
 }
-
-
-
-
-
-
-
-
-

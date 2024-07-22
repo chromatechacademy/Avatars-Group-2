@@ -244,10 +244,7 @@ public class Student_Admission_Steps {
                 "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
                 studentAdmissionPage.dynamicLocatorCheckBox(admissionNumber)
         );
-<<<<<<< HEAD
 
-=======
->>>>>>> f5efe49769143f9f8cae04e5092fc3e324f49f31
         if (isElementPresent) {
             WebElement checkbox = studentAdmissionPage.dynamicLocator(admissionNumber);
             checkbox.click();
@@ -261,17 +258,10 @@ public class Student_Admission_Steps {
         if (isCheckboxClicked) {
             JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
             CommonMethods.click(studentAdmissionPage.deleteButton);
-<<<<<<< HEAD
             CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
             CommonMethods.acceptAlert();
             JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
             CucumberLogUtils.logScreenShot();
-=======
-            CucumberLogUtils.logScreenShot();
-            CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
-            CommonMethods.acceptAlert();
-            JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
->>>>>>> f5efe49769143f9f8cae04e5092fc3e324f49f31
         }
     }
 }
