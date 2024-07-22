@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.chromatech</groupId>
-    <artifactId>AVATARS-GROUP-2</artifactId>
+    <artifactId>AVATARS-GROUP-1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>avatars-test-automation</name>
@@ -20,7 +20,6 @@
     </properties>
 
     <dependencies>
-
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
