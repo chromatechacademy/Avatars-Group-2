@@ -8,9 +8,16 @@ Feature: Student Admission with Unique Number Scenario
     And clicks on Sign In button
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Student Information module
+    And user clicks on the Bulk Delete submodule
+    And selects "SDET" for the class drop-down
+    And selects "Cucumber Fundamentals" for the section drop-down
+    And clicks on the Search button
+    When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
+    And if the record admission number "313" exists user clicks on the checkbox
+    And if the unique admission number exists clicks the Delete button and accepting alert "Are you sure you want to delete this?"
     And clicks on Student Admission sub module
     And enters Unique Admission Number "313"
-    And enters Roll Number "445"
+    And enters Roll Number "32"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
     And enters first name "Drew"

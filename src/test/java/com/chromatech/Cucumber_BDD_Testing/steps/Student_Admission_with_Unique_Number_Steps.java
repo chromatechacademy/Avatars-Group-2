@@ -1,6 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.appsCommon.StudentAdmissionWithUniqueNumberPage;
+import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionWithUniqueNumberPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
