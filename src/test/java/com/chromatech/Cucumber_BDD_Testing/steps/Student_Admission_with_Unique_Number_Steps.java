@@ -11,7 +11,7 @@ public class Student_Admission_with_Unique_Number_Steps {
 
     @Then("the user is given the message {string}")
     public void the_user_is_given_the_message(String expectedText) {
-        CommonMethods.assertEquals(studentAdmissionWithUniqueNumberPage.actualText.getText(), expectedText);
         CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(studentAdmissionWithUniqueNumberPage.actualText.getText(), expectedText);
     }
 }

@@ -256,10 +256,10 @@ public class Student_Admission_Steps {
         if (isCheckboxClicked) {
             JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
             CommonMethods.click(studentAdmissionPage.deleteButton);
+            CucumberLogUtils.logScreenShot();
             CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
             CommonMethods.acceptAlert();
             JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
-            CucumberLogUtils.logScreenShot();
         }
     }
 }
