@@ -222,7 +222,7 @@ public class Student_Admission_Steps {
 
     @When("clicks on the checkbox with the unique admission number {string}")
     public void clicks_on_the_checkbox_with_the_unique_admission_number(String uniqAdmissionNumber) {
-        CommonMethods.click(StudentAdmissionPage.dynamicLocator(uniqAdmissionNumber));
+        CommonMethods.click(studentAdmissionPage.dynamicLocator(uniqAdmissionNumber));
         CucumberLogUtils.logScreenShot();
     }
 
