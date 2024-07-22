@@ -50,7 +50,7 @@ Feature: Student Admission Scenario
     And clicks on the checkbox with the unique admission number "007"
     And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
 
-  @Smoke @AG2CP-19 @yuriy
+  @Regression @AG2CP-19 @yuriy
   Scenario Outline: Admitting Multiple Students Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
@@ -99,7 +99,6 @@ Feature: Student Admission Scenario
     When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
     And clicks on the checkbox with the unique admission number "<Unique Number>"
     And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
-
     Examples:
       | Unique Number | Unique Roll Number | First Name | Last Name | Gender | Date Of Birth | Student Email            | Admission Date | Blood Type | Date Calendar | Height | Weight | Father's Name | Father's Phone Number | Father's Occupation | Mother's Name | Mother's Phone Number | Mother's Email           | Mother's Occupation | Mother's Address                  |
       | 0001          | 987                | Olivia     | Smith     | Female | 01/07/1999    | olivia.smith@gmail.com   | 01/17/2021     | A+         | 01/17/2021    | 5'9    |  150   | Steve         | 337-453-0974          | Doctor              | Grace         | 347-875-8642          | grace.smith@gmail.com    | Lawyer              | 340 Maple Street, Springfield, IL |
@@ -112,4 +111,3 @@ Feature: Student Admission Scenario
       | 0008          | 349                | James      | Anderson  | Male   | 03/11/1997    | james.anderson@yahoo.com | 08/08/2017     | O+         | 03/12/2019    | 5'11   |  185   | Thomas        | 429-485-3938          | Photographer        | Diana         | 179-302-3498          | diana.cook@gmail.com     | Bookkeeper          | 541 Lake Drive, Seattle, WA       |
       | 0010          | 528                | William    | Evans     | Male   | 09/04/1992    | william.evans@aol.com    | 02/24/2015     | A-         | 06/23/2016    | 6'2    |  190   | Daniel        | 579-123-6578          | Electrician         | Nicole        | 249-816-3264          | nicole.evans@yahoo.com   | Real Estate Agent   | 915 Elm Street, Las Vegas, NV     |
       | 0011          | 028                | Chris      | Bernie    | Male   | 10/08/1977    | chris.bernie@aol.com     | 11/20/2014     | B+         | 02/18/2021    | 5'5    |  146   | Keith         | 766-923-7454          | Mechanic            | Rebecca       | 744-154-7002          | rebecca.ber@yahoo.com    | Astronaut           | 1 King's Plaza, Albany, NY        |
-
