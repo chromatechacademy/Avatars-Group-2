@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class StudentAdmissionPage {
@@ -167,5 +168,9 @@ public class StudentAdmissionPage {
      */
     public static String dynamicLocatorCheckBox(String text) {
         return "//*[contains(text(),'" + text + "')]//parent::tr/td/input";
+    }
+
+    public static WebElement dynamicLocatorByText(String text) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
     }
 }
