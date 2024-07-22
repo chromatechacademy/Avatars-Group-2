@@ -6,11 +6,14 @@ import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Student_Admission_Steps {
 
     StudentAdmissionPage studentAdmissionPage = new StudentAdmissionPage();
+    private boolean isCheckboxClicked = false;
 
     @When("user clicks on Student Information module")
     public void user_clicks_on_student_information_module() {
@@ -148,7 +151,7 @@ public class Student_Admission_Steps {
     public void saves_submission() {
         JavascriptMethods.scrollIntoView(studentAdmissionPage.saveButton);
         CommonMethods.click(studentAdmissionPage.saveButton);
-        CucumberLogUtils.logScreenShot();
+        CommonMethods.sleep(9000);
     }
 
     @When("enters guardian address {string}")
@@ -184,6 +187,7 @@ public class Student_Admission_Steps {
     @Then("the student is successfully admitted {string}")
     public void the_student_is_successfully_admitted(String expectedAlertSuccessText) {
         CucumberLogUtils.logScreenShot();
+        JavascriptMethods.scrollIntoView(studentAdmissionPage.actualAlertSuccessText);
         CommonMethods.assertEquals(studentAdmissionPage.actualAlertSuccessText.getText(), expectedAlertSuccessText);
     }
 
@@ -231,5 +235,33 @@ public class Student_Admission_Steps {
         CommonMethods.acceptAlert();
         JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
         CucumberLogUtils.logScreenShot();
+    }
+
+    @When("if the record admission number {string} exists user clicks on the checkbox")
+    public void if_the_record_admission_number_exists_user_clicks_on_the_checkbox(String admissionNumber) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        Boolean isElementPresent = (Boolean) js.executeScript(
+                "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
+                studentAdmissionPage.dynamicLocatorCheckBox(admissionNumber)
+        );
+
+        if (isElementPresent) {
+            WebElement checkbox = studentAdmissionPage.dynamicLocator(admissionNumber);
+            checkbox.click();
+            CucumberLogUtils.logScreenShot();
+            isCheckboxClicked = true;
+        }
+    }
+
+    @When("if the unique admission number exists clicks the Delete button and accepting alert {string}")
+    public void if_the_unique_admission_number_exists_clicks_the_delete_button_and_accepting_alert(String expectedAlertText) {
+        if (isCheckboxClicked) {
+            JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
+            CommonMethods.click(studentAdmissionPage.deleteButton);
+            CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+            CommonMethods.acceptAlert();
+            JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
+            CucumberLogUtils.logScreenShot();
+        }
     }
 }

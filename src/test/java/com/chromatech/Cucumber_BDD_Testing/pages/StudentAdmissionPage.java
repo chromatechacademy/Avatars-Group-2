@@ -164,4 +164,18 @@ public class StudentAdmissionPage {
         WebElement element = driver.findElement(By.xpath(dynamicXpath));
         return element;
     }
+
+    public static WebElement dynamicLocatorByText(String text) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
+    }
+
+    /**
+     * Finds and returns the dynamic locator for a checkbox based on the given text value.
+     *
+     * @param text the text value to be matched with the element text using contains()
+     * @return the dynamic locator for the checkbox
+     */
+    public static String dynamicLocatorCheckBox(String text) {
+        return "//*[contains(text(),'" + text + "')]//parent::tr/td/input";
+    }
 }
