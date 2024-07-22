@@ -42,6 +42,5 @@ public class Login_Steps {
         String actualUrl = driver.getCurrentUrl();
         CucumberLogUtils.logScreenShot();
         CommonMethods.assertEquals(actualUrl, expectedUrl);
-        CucumberLogUtils.logScreenShot();
     }
 }

@@ -11,7 +11,7 @@ public class StudentAdmissionWithUniqueNumberPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    //*ACTUAL TEXT*//
+    /*ACTUAL TEXT*/
     @FindBy(xpath = "//p[contains(text(),'The Admission No field must contain a unique value')]")
     public WebElement actualText;
 }

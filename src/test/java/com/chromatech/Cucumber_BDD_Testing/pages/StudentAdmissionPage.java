@@ -157,7 +157,6 @@ public class StudentAdmissionPage {
      */
     public static WebElement dynamicLocator(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//parent::tr/td/input"));
-
     }
 
     /**

@@ -243,7 +243,6 @@ public class Student_Admission_Steps {
                 "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
                 studentAdmissionPage.dynamicLocatorCheckBox(admissionNumber)
         );
-
         if (isElementPresent) {
             WebElement checkbox = studentAdmissionPage.dynamicLocator(admissionNumber);
             checkbox.click();
