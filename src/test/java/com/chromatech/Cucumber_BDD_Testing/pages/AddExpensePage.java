@@ -3,7 +3,6 @@ package com.chromatech.Cucumber_BDD_Testing.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class AddExpensePage {
@@ -36,24 +35,24 @@ public class AddExpensePage {
     @FindBy(xpath = "//input[@id='date']")
     public WebElement calendarPicker;
 
+
     // Amount Text Box
     @FindBy(xpath = "//input[@id='amount']")
-    public WebElement amountTetBox;
+    public WebElement amountTextBox;
 
-    //Attach Document
-    @FindBy(xpath = "//input[@id='documents']")
-    public WebElement attachDocument;
+    // Description Box
+    @FindBy(xpath = "//textarea[@id='description']")
+    public WebElement descriptionBox;
 
-//    //Save Button
-//    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
-//    public WebElement saveButton;
-//
-//    //Expense Displays
-//    @FindBy(xpath = "//h3[normalize-space()='Expense List']")
-//    public WebElement expenseDisplays;
+    //Save Button
+    @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
+    public WebElement saveButton;
+
+    //Expense Displays
+    @FindBy(xpath = "//tbody/tr[1]")
+    public WebElement expenseDisplays;
 
 //    //Remove Expense
-//    @FindBy(xpath = "//tbody/tr[2]/td[1]/a[1]")
+//    @FindBy(xpath = "//tbody/tr[1]/td[6]/a[2]/i[1]")
 //    public WebElement removeExpense;
-
 }
