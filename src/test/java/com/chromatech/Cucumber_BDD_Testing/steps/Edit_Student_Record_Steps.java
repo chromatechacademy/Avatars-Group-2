@@ -16,7 +16,7 @@ public class Edit_Student_Record_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("user enters unique admission number {string} in Search by Keyword text box")
+    @Then("user enters unique admission number {string} in Search by Keyword text box")
     public void user_enters_unique_admission_number_in_search_by_keyword_text_box(String searchByKeywordTex) {
         CommonMethods.sendKeys(editStudentRecordPage.searchByKeywordTextbox, searchByKeywordTex);
         CucumberLogUtils.logScreenShot();
@@ -47,6 +47,4 @@ public class Edit_Student_Record_Steps {
         CommonMethods.assertEquals(editStudentRecordPage.updatedEmail.getText(), updatedEmailExp);
         CommonMethods.assertEquals(editStudentRecordPage.updatedFathersName.getText(), updatedFathersNameExp);
     }
-
-
 }

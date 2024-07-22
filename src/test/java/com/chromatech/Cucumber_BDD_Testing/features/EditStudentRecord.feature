@@ -41,7 +41,7 @@ Feature: Ability to edit student records
     And user enters unique admission number "2589" in Search by Keyword text box
     And user clicks on the Search button
     And user clicks on show btn
-    And user is on the Student page checks updated data "Gamon", "stanislav.gomon@gmail.com", "Carlos"
+    And user is on the Student page checks updated data "Stanislav Gamon", "stanislav.gomon@gmail.com", "Carlos"
     And user clicks on the Bulk Delete submodule
     And selects "SDET" for the class drop-down
     And selects "Cucumber Fundamentals" for the section drop-down

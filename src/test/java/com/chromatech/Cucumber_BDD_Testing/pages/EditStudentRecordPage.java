@@ -42,11 +42,9 @@ public class EditStudentRecordPage {
     @FindBy(xpath = "//td[normalize-space()='stanislav.gomon@gmail.com']")
     public WebElement updatedEmail;
 
-    /*FATHER NAME ON STUDENT PAGE*/
+    /*FATHERS NAME ON STUDENT PAGE*/
     @FindBy(xpath = "//td[normalize-space()='Carlos']")
     public WebElement updatedFathersName;
-
-
 
     /**
      * Finds and returns the WebElement of the dynamic delete record locator based on the provided text.
