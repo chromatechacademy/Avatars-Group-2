@@ -506,7 +506,7 @@ public class CommonMethods extends WebDriverUtils {
         }
     }
 
-    /***
+    /**
      * Use this method to hover over element
      *
      * @param element
@@ -521,7 +521,7 @@ public class CommonMethods extends WebDriverUtils {
         }
     }
 
-    /*
+    /**
      *
      * Use below method to assert actual String value with an expected String value
      */
