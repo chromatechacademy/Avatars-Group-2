@@ -23,7 +23,7 @@ public class LoginPage {
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInButton;
 
-    // *Alert Message* //
+    // *ALERT MESSAGE* //
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement actualText;
 }
