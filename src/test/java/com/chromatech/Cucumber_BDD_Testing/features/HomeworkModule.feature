@@ -1,6 +1,6 @@
 Feature: Homework Module Scenario
 
-#  @Regression @AG2CP-10 @anna
+ @Smoke @AG2CP-10 @anna
   Scenario: Homework Module Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
