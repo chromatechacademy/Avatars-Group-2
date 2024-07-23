@@ -49,10 +49,10 @@ public class AddExpensePage {
     public WebElement saveButton;
 
     //Expense Displays
-    @FindBy(xpath = "//tbody/tr[1]")
+    @FindBy(xpath = "//h3[normalize-space()='Expense List']")
     public WebElement expenseDisplays;
 
-//    //Remove Expense
-//    @FindBy(xpath = "//tbody/tr[1]/td[6]/a[2]/i[1]")
-//    public WebElement removeExpense;
+    //Remove Expense
+    @FindBy(xpath = "//*[contains(text(),'54321')]/following-sibling::td[2]/following-sibling::td[2]/a[2]")
+    public WebElement removeExpense;
 }

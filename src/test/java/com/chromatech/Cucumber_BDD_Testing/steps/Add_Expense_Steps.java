@@ -7,9 +7,8 @@ import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 
@@ -63,7 +62,7 @@ public class Add_Expense_Steps {
 
     @When("attach file")
     public void attach_document() {
-        String filePath = System.getProperty("user.dir") + "/src/main/resources/Files/Screenshot 2024-07-21 at 7.24.02 PM.png";
+        String filePath = System.getProperty("user.dir" + "/src/main/resources/files/Screenshot 2024-07-21 at 7.24.02 PM.png");
         WebElement fileInput = attachFile.file;
         fileInput.sendKeys(filePath);
         CucumberLogUtils.logScreenShot();
@@ -83,23 +82,21 @@ public class Add_Expense_Steps {
 
     @Then("the expense displays as expected {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_expense_displays_as_expected(String expenseHeadDropDown, String nameTextBox, String invoiceNumberTextBox, String calendarPicker, String amountTextBox, String descriptionBox) {
-//        CommonMethods.assertEquals(addExpensePage.expenseHeadDropDown.getText(), expenseHeadDropDown);
-//        CommonMethods.assertEquals(addExpensePage.nameTextBox.getText(), nameTextBox);
-//        CommonMethods.assertEquals(addExpensePage.invoiceNumberTextBox.getText(), invoiceNumberTextBox);
-//        CommonMethods.assertEquals(addExpensePage.calendarPicker.getText(), calendarPicker);
-//        CommonMethods.assertEquals(addExpensePage.amountTextBox.getText(), amountTextBox);
-//        CommonMethods.assertEquals(addExpensePage.descriptionBox.getText(), descriptionBox);
+        CommonMethods.assertEquals(addExpensePage.expenseHeadDropDown.getText(), expenseHeadDropDown);
+        CommonMethods.assertEquals(addExpensePage.nameTextBox.getText(), nameTextBox);
+        CommonMethods.assertEquals(addExpensePage.invoiceNumberTextBox.getText(), invoiceNumberTextBox);
+        CommonMethods.assertEquals(addExpensePage.calendarPicker.getText(), calendarPicker);
+        CommonMethods.assertEquals(addExpensePage.amountTextBox.getText(), amountTextBox);
+        CommonMethods.assertEquals(addExpensePage.descriptionBox.getText(), descriptionBox);
         CommonMethods.isElementDisplayed(addExpensePage.expenseDisplays);
         CucumberLogUtils.logScreenShot();
 
     }
 
-//    @Then("the expense can then be removed")
-//    public void the_expense_can_then_be_removed() {
-////        CommonMethods.click(addExpensePage.removeExpense);
-////        CucumberLogUtils.logScreenShot();
-//        WebElement.removeExpense = driver.findElement(By.name(removeExpense));
-//        delete.click();
-//    }
-
+    @Then("the expense can then be removed")
+    public void the_expense_can_then_be_removed() {
+        CommonMethods.click(addExpensePage.removeExpense);
+        CommonMethods.acceptAlert();
+        CucumberLogUtils.logScreenShot();
+    }
 }
