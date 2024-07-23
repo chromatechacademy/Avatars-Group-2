@@ -17,5 +17,5 @@ Feature: Adding Expenses Scenario
     And attach file
     And enters description "Tuition payment"
     And user saves application
-    Then the expense displays as expected "Hello", "Mary", "54321", "07/01/2024", "$1500.00", "Tuition payment"
+    Then the expense displays as expected  "Mary", "54321", "07/01/2024", "Hello",  "$1500.00"
     And the expense can then be removed

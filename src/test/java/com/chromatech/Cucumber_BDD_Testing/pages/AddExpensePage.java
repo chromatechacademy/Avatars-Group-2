@@ -1,5 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -35,10 +36,17 @@ public class AddExpensePage {
     @FindBy(xpath = "//input[@id='date']")
     public WebElement calendarPicker;
 
-
     // Amount Text Box
     @FindBy(xpath = "//input[@id='amount']")
     public WebElement amountTextBox;
+
+    //Attach File
+    @FindBy(xpath = "//input[@id='documents']")
+    public WebElement file;
+
+    public static String locatorForFile(String file) {
+        return System.getProperty("user.dir") + file;
+    }
 
     // Description Box
     @FindBy(xpath = "//textarea[@id='description']")
@@ -48,11 +56,7 @@ public class AddExpensePage {
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    //Expense Displays
-    @FindBy(xpath = "//h3[normalize-space()='Expense List']")
-    public WebElement expenseDisplays;
-
     //Remove Expense
-    @FindBy(xpath = "//*[contains(text(),'54321')]/following-sibling::td[2]/following-sibling::td[2]/a[2]")
+    @FindBy(xpath = "//td[text()='54321']/following-sibling::td[4]/a[3]")
     public WebElement removeExpense;
 }
