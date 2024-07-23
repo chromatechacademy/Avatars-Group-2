@@ -1,6 +1,6 @@
 Feature: Student Admission Scenario
 
-  @Regression @AG2CP-12 @ira @Progression
+  @Regression @AG2CP-12 @ira
   Scenario: Student Admission Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
