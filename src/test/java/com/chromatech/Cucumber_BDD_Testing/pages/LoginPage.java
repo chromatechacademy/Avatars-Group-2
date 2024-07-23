@@ -11,19 +11,19 @@ public class LoginPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    /*Username Text box*/
+    /* Username Text box */
     @FindBy(xpath = "//input[@id='form-username']")
     public WebElement usernameTextBox;
 
-    /*Password Text box*/
+    /* Password Text box */
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordTextBox;
 
-    /*Sign In Button*/
+    /* Sign In Button */
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInButton;
 
-    /*Alert Message*/
+    /* ALERT MESSAGE */
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement actualText;
 }
