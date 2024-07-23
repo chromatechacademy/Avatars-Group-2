@@ -90,11 +90,6 @@ public class VerifyingStudentDataPage {
     @FindBy(xpath = "//input[@class='form-control']")
     public WebElement searchByKeywordTextBox;
 
-    /*LOCATOR FOR THE FILE*/
-    public static String locatorForFile(String file){
-        return System.getProperty("user.dir")+ file;
-    }
-
     /*LOCATOR FOR THE STUDENT DETAILS*/
     public List<WebElement> dynamicLocator(String text) {
         return driver.findElements(By.xpath("//*[contains(text(),\"" + text + "\")]"));

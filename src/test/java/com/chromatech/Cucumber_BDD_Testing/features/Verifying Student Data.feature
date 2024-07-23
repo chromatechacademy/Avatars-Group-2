@@ -27,7 +27,7 @@ Feature: Verifying Student Data Scenario
     And selects "Selenium" from category drop down
     And enters email "emma.johnson@gmail.com"
     And selects "07/17/2024" for Admission Date Calendar Day
-    And upload Student picture "\src\main\resources\file\Emma.png"
+    And upload Student picture
     And selects "B+" from Blood Group drop down
     And selects "07/17/2024" for As on Date Calendar Day
     And enters phone number "3476290614"
@@ -36,12 +36,12 @@ Feature: Verifying Student Data Scenario
     And enters father name "Carl Johnson"
     And enters father phone number "347-982-8725"
     And enters father occupation "Doctor"
-    And upload Father picture "\src\main\resources\file\Carl.png"
+    And upload Father picture
     And enters mother name "Rebecca Johnson"
     And enters mother phone number "348-926-9265"
     And enters mother email "rebecca.johnson@gmail.com"
     And enters mother occupation "Nurse"
-    And upload Mother picture "\src\main\resources\file\Helen.png"
+    And upload Mother picture
     And selects Mother radio button for If guardian is field
     And enters guardian address "1067 Madison Ave, New York, NY 10028"
     And clicks on Add More details
@@ -55,10 +55,10 @@ Feature: Verifying Student Data Scenario
     And enters Previous School Details "Springfield Elementary School. 123 Main Street, Springfield, USA 12345."
     And enters a Note "We were in this school for 5 years.During our time at Springfield Elementary, we were continually impressed by the school’s dedication to academic excellence and its nurturing community."
     And enters first Title of document "Document one", "Document two", "Document three", "Document three".
-    And uploads file one to Documents "\src\main\resources\file\Doc One.docx"
-    And uploads file two to Documents "\src\main\resources\file\Doc Two.docx"
-    And uploads file three to Documents "\src\main\resources\file\Doc Three.docx"
-    And uploads file four to Documents "\src\main\resources\file\Doc Four.docx"
+    And uploads file one to Documents
+    And uploads file two to Documents
+    And uploads file three to Documents
+    And uploads file four to Documents
     And saves submission
     Then the student is successfully admitted "Record Saved Successfully"
     And clicks on Student Details sub module

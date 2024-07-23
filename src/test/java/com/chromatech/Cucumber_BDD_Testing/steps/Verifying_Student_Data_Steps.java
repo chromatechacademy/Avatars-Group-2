@@ -12,6 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
+import static com.chromatech.utils.FrameworkConstants.*;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Verifying_Student_Data_Steps {
@@ -106,27 +107,27 @@ public class Verifying_Student_Data_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("uploads file one to Documents {string}")
-    public void uploads_file_one_to_Documents(String filePath) {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxOne, verifyingStudentDataPage.locatorForFile(filePath));
+    @When("uploads file one to Documents")
+    public void uploads_file_one_to_Documents() {
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxOne, DOCUMENT_ONE_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("uploads file two to Documents {string}")
-    public void uploads_file_two_to_Documents(String filePath) {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxTwo, verifyingStudentDataPage.locatorForFile(filePath));
+    @When("uploads file two to Documents")
+    public void uploads_file_two_to_Documents() {
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxTwo, DOCUMENT_TWO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("uploads file three to Documents {string}")
-    public void uploads_file_three_to_Documents(String filePath) {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxThree, verifyingStudentDataPage.locatorForFile(filePath));
+    @When("uploads file three to Documents")
+    public void uploads_file_three_to_Documents() {
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxThree, DOCUMENT_THREE_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("uploads file four to Documents {string}")
-    public void uploads_file_four_to_Documents(String filePath) {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxFour, verifyingStudentDataPage.locatorForFile(filePath));
+    @When("uploads file four to Documents")
+    public void uploads_file_four_to_Documents() {
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxFour, DOCUMENT_FOUR_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
@@ -136,27 +137,26 @@ public class Verifying_Student_Data_Steps {
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("upload Mother picture {string}")
-    public void upload_mother_picture(String filePath) {
-        CommonMethods.sendKeys(verifyingStudentDataPage.motherPhotoBox, verifyingStudentDataPage.locatorForFile(filePath));
+    @When("upload Mother picture")
+    public void upload_mother_picture() {
+        CommonMethods.sendKeys(verifyingStudentDataPage.motherPhotoBox, MOTHER_PHOTO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("upload Student picture {string}")
-    public void upload_student_picture(String filePath) {
-        CommonMethods.sendKeys(verifyingStudentDataPage.studentPhotoBox, verifyingStudentDataPage.locatorForFile(filePath));
+    @When("upload Student picture")
+    public void upload_student_picture() {
+        CommonMethods.sendKeys(verifyingStudentDataPage.studentPhotoBox, STUDENT_PHOTO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
-    @When("upload Father picture {string}")
-    public void upload_father_picture(String filePath) {
-        CommonMethods.sendKeys(verifyingStudentDataPage.fatherPhotoBox, verifyingStudentDataPage.locatorForFile(filePath));
+    @When("upload Father picture")
+    public void upload_father_picture() {
+        CommonMethods.sendKeys(verifyingStudentDataPage.fatherPhotoBox, FATHER_PHOTO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
     @Then("all student data submitted with the record should display {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void all_student_data_submitted_with_the_record_should_display(String expectedUniqNumberText, String expectedNameText, String expectedClassText, String expectedFathersNameText, String expectedDateOfBirthText, String expectedGenderText, String expectedCategoryText, String expectedPhoneNumberText, String expectedHeightText, String expectedWeightText) {
-        CucumberLogUtils.logScreenShot();
         ArrayList<String> dataList = new ArrayList<>();
         dataList.add(expectedUniqNumberText);
         dataList.add(expectedNameText);
@@ -181,5 +181,6 @@ public class Verifying_Student_Data_Steps {
                 throw new AssertionError("Expected text: " + expectedText + " not found on the webpage.");
             }
         }
+        CucumberLogUtils.logScreenShot();
     }
 }
