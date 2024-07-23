@@ -1,6 +1,6 @@
 Feature: Verifying Student Data Scenario
 
-  @Regression @AG2CP-27 @ira
+  @Regression @AG2CP-27 @Divyadivya11
   Scenario: Verifying Student Data Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
@@ -31,7 +31,7 @@ Feature: Verifying Student Data Scenario
     And selects "B+" from Blood Group drop down
     And selects "07/17/2024" for As on Date Calendar Day
     And enters phone number "3476290614"
-    And enters a height "5.4"
+    And enters a height "5'4"
     And enters a weight "105"
     And enters father name "Carl Johnson"
     And enters father phone number "347-982-8725"
@@ -66,4 +66,4 @@ Feature: Verifying Student Data Scenario
     And selects "Cucumber Fundamentals" for section drop down
     And clicks on the Search button
     And sends unique number to Search By Keyword text box "9911"
-    Then all student data submitted with the record should display "9911", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Selenium", "3476290614", "5.4", "105"
+    Then all student data submitted with the record should display "9911", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Selenium", "3476290614", "5'4", "105"

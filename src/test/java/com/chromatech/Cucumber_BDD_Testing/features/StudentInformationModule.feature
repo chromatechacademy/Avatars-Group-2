@@ -1,6 +1,6 @@
 Feature: Student Information Module
 
-  @Progression @AG2CP-4 @Divyadivya11
+  @Regression @AG2CP-4 @Divyadivya11
   Scenario: Display submodules on Student Information Module
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box

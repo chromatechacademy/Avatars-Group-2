@@ -5,9 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import java.util.ArrayList;
 import java.util.List;
-
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class VerifyingStudentDataPage {
@@ -92,31 +90,29 @@ public class VerifyingStudentDataPage {
     @FindBy(xpath = "//input[@class='form-control']")
     public WebElement searchByKeywordTextBox;
 
+    /*LOCATOR FOR THE FILE*/
     public static String locatorForFile(String file){
         return System.getProperty("user.dir")+ file;
     }
 
+    /*LOCATOR FOR THE STUDENT DETAILS*/
     public List<WebElement> dynamicLocator(String text) {
-        return driver.findElements(By.xpath("//*[contains(text(),'" + text + "')]"));
+        return driver.findElements(By.xpath("//*[contains(text(),\"" + text + "\")]"));
     }
 
-    /**
-     * Sends text to four documents.
-     *
-     * @param docOneText   The text to be sent to the first document.
-     * @param docTwoText   The text to be sent to the second document.
-     * @param docThreeText The text to be sent to the third document.
-     * @param docFourText  The text to be sent to the fourth document.
-     */
-    public static void sendTextToFourDocuments(String docOneText, String doxTwoText, String docThreeText, String docFourText) {
-        ArrayList<String> docs = new ArrayList<>();
-        docs.add(docOneText);
-        docs.add(doxTwoText);
-        docs.add(docThreeText);
-        docs.add(docFourText);
-        for (int i = 0; i < docs.size(); i++) {
-            WebElement textBox = driver.findElement(By.xpath("(//input[contains(@name,'title')])[" + (i + 1) + "]"));
-            textBox.sendKeys(docs.get(i));
-        }
-    }
+    /*LOCATOR FOR THE FIRST DOCUMENT TITLE TEXT BOX*/
+    @FindBy(xpath = "//input[@name='first_title']")
+    public WebElement firstTitleTextBox;
+
+    /*LOCATOR FOR THE SECOND DOCUMENT TITLE TEXT BOX*/
+    @FindBy(xpath = "//input[@name='second_title']")
+    public WebElement secondTitleTextBox;
+
+    /*LOCATOR FOR THE THIRD DOCUMENT TITLE TEXT BOX*/
+    @FindBy(xpath = "//input[@name='fourth_title']")
+    public WebElement thirdTitleTextBox;
+
+    /*LOCATOR FOR THE FOURTH DOCUMENT TITLE TEXT BOX*/
+    @FindBy(xpath = "//input[@name='fifth_title']")
+    public WebElement fourthTitleTextBox;
 }
