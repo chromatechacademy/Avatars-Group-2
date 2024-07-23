@@ -87,9 +87,9 @@ public class Add_Expense_Steps {
 
         for (int i = 0; i < expenseData.size(); i++) {
             WebElement element = driver.findElement(By.xpath("//tr/td[text()='" + expectedInvoiceNumberText + "']//parent::tr/td[" + (i + 1) + "]"));
+            CucumberLogUtils.logScreenShot();
             CommonMethods.assertEquals(element.getText(), expenseData.get(i));
         }
-        CucumberLogUtils.logScreenShot();
     }
 
     @Then("the expense can then be removed")
