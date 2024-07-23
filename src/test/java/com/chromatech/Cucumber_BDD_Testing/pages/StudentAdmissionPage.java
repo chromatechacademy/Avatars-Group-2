@@ -179,7 +179,7 @@ public class StudentAdmissionPage {
         return "//*[contains(text(),'" + text + "')]//parent::tr/td/input";
     }
 
-    public static WebElement dynamicLocatorByText(String text) {
-        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
-    }
+//    public static WebElement dynamicLocatorByText(String text) {
+//        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
+//    }
 }
