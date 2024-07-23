@@ -23,6 +23,8 @@ public class Student_Admission_Steps {
 
     @When("clicks on Student Admission sub module")
     public void clicks_on_student_admission_sub_module() {
+        CommonMethods.waitForClickability(studentAdmissionPage.studentAdmissionSubModule);
+        CommonMethods.sleep(3000);
         CommonMethods.click(studentAdmissionPage.studentAdmissionSubModule);
         CucumberLogUtils.logScreenShot();
     }
@@ -256,7 +258,6 @@ public class Student_Admission_Steps {
         if (isCheckboxClicked) {
             JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
             CommonMethods.click(studentAdmissionPage.deleteButton);
-            CucumberLogUtils.logScreenShot();
             CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
             CommonMethods.acceptAlert();
             JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
