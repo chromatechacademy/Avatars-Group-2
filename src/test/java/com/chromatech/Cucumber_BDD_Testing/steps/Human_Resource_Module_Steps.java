@@ -7,7 +7,7 @@ import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Human_Resource_module_Steps {
+public class Human_Resource_Module_Steps {
 
     HumanResourceModulePage humanResourceModule = new HumanResourceModulePage();
 
