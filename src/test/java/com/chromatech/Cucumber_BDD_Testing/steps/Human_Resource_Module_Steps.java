@@ -1,15 +1,15 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.HumanResourceModule;
+import com.chromatech.Cucumber_BDD_Testing.pages.HumanResourceModulePage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Human_Resource_module_Steps {
+public class Human_Resource_Module_Steps {
 
-    HumanResourceModule humanResourceModule = new HumanResourceModule();
+    HumanResourceModulePage humanResourceModule = new HumanResourceModulePage();
 
     @When("the user clicks on the Human Resource module")
     public void the_user_clicks_on_the_human_resource_module() {
