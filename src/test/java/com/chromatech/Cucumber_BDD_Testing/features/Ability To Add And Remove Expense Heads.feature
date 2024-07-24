@@ -9,4 +9,4 @@ Scenario: Ability To Add And Remove Expense Heads
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Expenses module
     And clicks on the Expense Head module
-      And adds and expense
+      And adds an expense
