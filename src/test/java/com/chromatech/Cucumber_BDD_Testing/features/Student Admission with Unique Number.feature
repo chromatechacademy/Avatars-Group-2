@@ -1,6 +1,6 @@
 Feature: Student Admission with Unique Number Scenario
 
-# @Regression @AG2CP-13 @bennett
+  @Regression @AG2CP-13 @bennett
   Scenario: Student Admission with Unique Number Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
