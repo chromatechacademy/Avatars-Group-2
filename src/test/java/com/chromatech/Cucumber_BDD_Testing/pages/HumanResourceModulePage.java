@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HumanResourceModule {
+public class HumanResourceModulePage {
 
     /* HUMAN RESOURCE BUTTON */
     @FindBy(xpath = "//span[normalize-space()='Human Resource']")
@@ -47,7 +47,7 @@ public class HumanResourceModule {
     @FindBy(xpath = "//a[normalize-space()='Designation']")
     public WebElement designationSubModule;
 
-    public HumanResourceModule() {
+    public HumanResourceModulePage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }
