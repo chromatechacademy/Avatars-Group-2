@@ -6,7 +6,6 @@ import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 
