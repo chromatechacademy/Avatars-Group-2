@@ -23,8 +23,8 @@ public class Ability_To_Add_And_Delete_Student_Categories_Steps {
     }
 
     @When("adding and saving a new Student Category {string}")
-    public void adding_and_saving_a_new_student_category(String categoryText) {
-        CommonMethods.sendKeys(studentCategoriesPage.categoryTextBox, categoryText);
+    public void adding_and_saving_a_new_student_category(String expectedCategoryText) {
+        CommonMethods.sendKeys(studentCategoriesPage.categoryTextBox, expectedCategoryText);
         CucumberLogUtils.logScreenShot();
         studentCategoriesPage.saveButton.click();
     }
