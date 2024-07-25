@@ -7,10 +7,8 @@ import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import java.sql.SQLOutput;
 import java.util.List;
 
 import static com.chromatech.utils.WebDriverUtils.driver;
@@ -54,7 +52,7 @@ public class Ability_To_Add_And_Delete_Sections_Steps {
     public void user_is_deleting_the_section(String sectionNameDelete) {
         JavascriptMethods.scrollIntoView(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDelete));
         CucumberLogUtils.logScreenShot();
-     CommonMethods.click(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDelete));
+        CommonMethods.click(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDelete));
     }
 
     @Then("accepting alert {string}")
@@ -66,20 +64,35 @@ public class Ability_To_Add_And_Delete_Sections_Steps {
 
     @When("if the section {string} exists user clicks on the delete button and accepting alert")
     public void if_the_section_exists_user_clicks_on_the_delete_button_and_accepting_alert(String sectionNameDeleteText) {
-        List<WebElement> names = driver.findElements(By.xpath("//tbody/tr"));
-        for(WebElement name : names){
-            List<WebElement> rows = name.findElements(By.tagName("tr"));
-            for(WebElement row : rows){
-                if (name.getText().equals(sectionNameDeleteText)) {
+        List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
+        for (WebElement row : rows) {
+            List<WebElement> cols = row.findElements(By.tagName("td"));
+            for (WebElement col : cols) {
+                if (col.getText().equals(sectionNameDeleteText)) {
+                    CucumberLogUtils.logScreenShot();
+                    JavascriptMethods.scrollIntoView(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText));
                     CommonMethods.click(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText));
                     CommonMethods.acceptAlert();
                     return;
                 }
             }
-            System.out.println("* * * SECTION " + sectionNameDeleteText + "DOESNT EXIST * * *");
         }
+        CucumberLogUtils.logScreenShot();
+        System.out.println("Record number " + sectionNameDeleteText + " does not exist");
     }
 
+
+
+
+
+//    @When("if the section {string} exists user clicks on the delete button and accepting alert")
+//    public void if_the_section_exists_user_clicks_on_the_delete_button_and_accepting_alert(String sectionNameDeleteText) {
+//        if (abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText).isDisplayed()) {
+//            CommonMethods.click(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText));
+//            CommonMethods.acceptAlert();
+//        }
+//        System.out.println("* * * SECTION " + sectionNameDeleteText + "DOESNT EXIST * * *");
+//    }
 
 
 
