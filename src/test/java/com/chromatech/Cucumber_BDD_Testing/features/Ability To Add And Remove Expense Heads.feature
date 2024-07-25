@@ -1,4 +1,4 @@
-Feature: Ability To Add And Remove Expense Heads
+Feature:
 
   @Progression @AG2CP-26 @bennett
   Scenario: Ability To Add And Remove Expense Heads
