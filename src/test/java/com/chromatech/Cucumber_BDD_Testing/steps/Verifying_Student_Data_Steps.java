@@ -12,7 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
-import static com.chromatech.utils.FrameworkConstants.*;
+import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.*;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Verifying_Student_Data_Steps {

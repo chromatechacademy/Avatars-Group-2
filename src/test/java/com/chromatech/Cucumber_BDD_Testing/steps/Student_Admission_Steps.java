@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Student_Admission_Steps {
@@ -23,8 +24,8 @@ public class Student_Admission_Steps {
 
     @When("clicks on Student Admission sub module")
     public void clicks_on_student_admission_sub_module() {
-        CommonMethods.waitForClickability(studentAdmissionPage.studentAdmissionSubModule);
         CommonMethods.sleep(3000);
+        CommonMethods.waitForClickability(studentAdmissionPage.studentAdmissionSubModule);
         CommonMethods.click(studentAdmissionPage.studentAdmissionSubModule);
         CucumberLogUtils.logScreenShot();
     }
