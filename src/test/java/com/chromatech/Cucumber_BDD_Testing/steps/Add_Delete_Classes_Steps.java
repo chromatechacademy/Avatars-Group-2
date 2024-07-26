@@ -45,6 +45,7 @@ public class Add_Delete_Classes_Steps {
         } else {
             System.out.println("Class " + savedClass + " does not exist, so no need to delete.");
         }
+        CucumberLogUtils.logScreenShot();
     }
 
     @When("enters {string} on Class text box")
