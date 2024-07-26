@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AbilityToAddAndDeleteSectionsPage {
 
-    public AbilityToAddAndDeleteSectionsPage(){
+    public AbilityToAddAndDeleteSectionsPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
@@ -32,21 +32,13 @@ public class AbilityToAddAndDeleteSectionsPage {
     @FindBy(xpath = "//div[@class='alert alert-success text-left']")
     public WebElement actualAlertSaveText;
 
+    /**
+     * Finds and returns a web element based on dynamic locator using the given text.
+     *
+     * @param text the text used to identify the web element
+     * @return the web element found based on the dynamic locator
+     */
     public static WebElement dynamicLocatorDelete(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("(//*[contains(text(),'" + text + "')]//parent::tr/td[2]/a/i)[2]"));
     }
-
-//    ((//*[contains(text(),'New Section Test')]//parent::tr/td)[2]/a/i)[2]
-
-
-
-
-
-
-
-
-
-
-
-
 }

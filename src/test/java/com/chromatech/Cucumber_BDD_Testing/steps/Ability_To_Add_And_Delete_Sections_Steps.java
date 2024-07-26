@@ -8,9 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
-
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Ability_To_Add_And_Delete_Sections_Steps {
@@ -80,20 +78,4 @@ public class Ability_To_Add_And_Delete_Sections_Steps {
         CucumberLogUtils.logScreenShot();
         System.out.println("Record number " + sectionNameDeleteText + " does not exist");
     }
-
-
-
-
-
-//    @When("if the section {string} exists user clicks on the delete button and accepting alert")
-//    public void if_the_section_exists_user_clicks_on_the_delete_button_and_accepting_alert(String sectionNameDeleteText) {
-//        if (abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText).isDisplayed()) {
-//            CommonMethods.click(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText));
-//            CommonMethods.acceptAlert();
-//        }
-//        System.out.println("* * * SECTION " + sectionNameDeleteText + "DOESNT EXIST * * *");
-//    }
-
-
-
 }
