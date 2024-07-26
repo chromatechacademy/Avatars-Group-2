@@ -8,7 +8,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Student_Admission_Steps {
