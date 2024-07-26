@@ -1,6 +1,6 @@
-Feature:
+Feature: Ability To Add And Remove Expense Heads
 
-  @Progression @AG2CP-26 @bennett
+  @Regression @AG2CP-26 @bennett
   Scenario: Ability To Add And Remove Expense Heads
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
