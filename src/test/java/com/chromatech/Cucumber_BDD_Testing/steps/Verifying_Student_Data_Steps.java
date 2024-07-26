@@ -13,6 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
+import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.*;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Verifying_Student_Data_Steps {
@@ -109,25 +110,25 @@ public class Verifying_Student_Data_Steps {
 
     @When("uploads file one to Documents")
     public void uploads_file_one_to_Documents() {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxOne, FrameworkConstants.DOCUMENT_ONE_FILEPATH);
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxOne, DOCUMENT_ONE_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
     @When("uploads file two to Documents")
     public void uploads_file_two_to_Documents() {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxTwo, FrameworkConstants.DOCUMENT_TWO_FILEPATH);
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxTwo, DOCUMENT_TWO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
     @When("uploads file three to Documents")
     public void uploads_file_three_to_Documents() {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxThree, FrameworkConstants.DOCUMENT_THREE_FILEPATH);
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxThree, DOCUMENT_THREE_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
     @When("uploads file four to Documents")
     public void uploads_file_four_to_Documents() {
-        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxFour, FrameworkConstants.DOCUMENT_FOUR_FILEPATH);
+        CommonMethods.sendKeys(verifyingStudentDataPage.documentBoxFour, DOCUMENT_FOUR_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
@@ -139,19 +140,19 @@ public class Verifying_Student_Data_Steps {
 
     @When("upload Mother picture")
     public void upload_mother_picture() {
-        CommonMethods.sendKeys(verifyingStudentDataPage.motherPhotoBox, FrameworkConstants.MOTHER_PHOTO_FILEPATH);
+        CommonMethods.sendKeys(verifyingStudentDataPage.motherPhotoBox, MOTHER_PHOTO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
     @When("upload Student picture")
     public void upload_student_picture() {
-        CommonMethods.sendKeys(verifyingStudentDataPage.studentPhotoBox, FrameworkConstants.STUDENT_PHOTO_FILEPATH);
+        CommonMethods.sendKeys(verifyingStudentDataPage.studentPhotoBox, STUDENT_PHOTO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 
     @When("upload Father picture")
     public void upload_father_picture() {
-        CommonMethods.sendKeys(verifyingStudentDataPage.fatherPhotoBox, FrameworkConstants.FATHER_PHOTO_FILEPATH);
+        CommonMethods.sendKeys(verifyingStudentDataPage.fatherPhotoBox, FATHER_PHOTO_FILEPATH);
         CucumberLogUtils.logScreenShot();
     }
 

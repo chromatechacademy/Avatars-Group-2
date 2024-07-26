@@ -12,37 +12,37 @@ public class AddDeleteClassesPage {
         PageFactory.initElements(driver, this);
     }
 
-    //ACADEMICS MODULE
+    /*ACADEMICS MODULE*/
     @FindBy(xpath = "//span[normalize-space()='Academics']")
     public WebElement academicsModule;
 
-    //CLASS SUB MODULE
+    /*CLASS SUB MODULE*/
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classSubModule;
 
-    //CLASS TEXT BOX
+    /*CLASS TEXT BOX*/
     @FindBy(xpath = "//input[@id='class']")
     public WebElement classTextBox;
 
-    //SECTION TEXT BOX
+    /*SECTION TEXT BOX*/
     public WebElement sectionCheckBox(String section) {
         return driver.findElement(By.xpath("//label[contains(normalize-space(), '" + section + "' )]"));
     }
 
-    //SAVE BUTTON
+    /*SAVE BUTTON*/
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    //SAVED MESSAGE
+    /*SAVED MESSAGE*/
     @FindBy(xpath = "//div[@class='alert alert-success text-left']")
     public WebElement recordSavedMessage;
 
-    // DELETE BUTTON
+    /*DELETE BUTTON*/
     public WebElement deleteButton(String savedClass) {
         return driver.findElement(By.xpath("//td[normalize-space(text())='" + savedClass + "']/following-sibling::td//a[@title='Delete']"));
     }
 
-    // SAVED CLASS XPATH
+    /*SAVED CLASS XPATH*/
     public String savedClassXpath(String savedClass) {
         return "//td[normalize-space(text())='" + savedClass + "']/following-sibling::td//a[@title='Delete']";
     }
