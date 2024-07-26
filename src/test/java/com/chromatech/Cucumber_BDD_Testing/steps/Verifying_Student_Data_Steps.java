@@ -4,6 +4,7 @@ import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionPage;
 import com.chromatech.Cucumber_BDD_Testing.pages.VerifyingStudentDataPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
+import com.chromatech.utils.FrameworkConstants;
 import com.chromatech.utils.JavascriptMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,7 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
-import static com.chromatech.utils.FrameworkConstants.*;
+import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.*;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class Verifying_Student_Data_Steps {
