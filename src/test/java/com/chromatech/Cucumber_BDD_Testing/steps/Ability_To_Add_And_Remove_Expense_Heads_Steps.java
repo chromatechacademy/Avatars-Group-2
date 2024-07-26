@@ -13,7 +13,7 @@ public class Ability_To_Add_And_Remove_Expense_Heads_Steps {
     AbilityToAddAndRemoveExpenseHeadsPage abilityToAddAndRemoveExpenseHeadsPage = new AbilityToAddAndRemoveExpenseHeadsPage();
 
     @Given("clicks on the Expense Head module")
-    public void i_am_on_the_ability_to_add_and_remove_expense_heads_page() {
+    public void clicks_on_the_expense_head_module() {
         CommonMethods.click(abilityToAddAndRemoveExpenseHeadsPage.expenseHeadSubmodule);
         CucumberLogUtils.logScreenShot();
 
