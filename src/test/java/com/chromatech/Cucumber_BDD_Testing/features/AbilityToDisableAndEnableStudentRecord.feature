@@ -1,7 +1,7 @@
-Feature:  Ability to disable student records
+Feature:  Ability to disable and enable student records
 
-  @Regression @AG2CP-15 @anna @Progression
-  Scenario:  Ability to disable student records
+  @Regression @AG2CP-15 @AG2CP-16 @anna
+  Scenario:  Ability to disable and enable student records
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
     And enters password "123456" in the password text box
@@ -39,3 +39,12 @@ Feature:  Ability to disable student records
     Then user clicks on Disabled Students sub module
     And user enters unique admission number "2589" in Search by Keyword text box
     And user clicks on the Search button
+    And user clicks on show btn
+    And user clicks on Enable button and accepting alert "Are you sure? you want to enable this record"
+    And user clicks on the Bulk Delete submodule
+    And selects "SDET" for the class drop-down
+    And selects "Cucumber Fundamentals" for the section drop-down
+    And clicks on the Search button
+    When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
+    And clicks on the checkbox with the unique admission number "2589"
+    And clicks the Delete button and accepting alert "Are you sure you want to delete this?"

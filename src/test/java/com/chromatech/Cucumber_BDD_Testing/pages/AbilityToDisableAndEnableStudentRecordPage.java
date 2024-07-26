@@ -7,27 +7,31 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
-public class AbilityToDisableStudentRecordPage {
+public class AbilityToDisableAndEnableStudentRecordPage {
 
-    public AbilityToDisableStudentRecordPage() {
+    public AbilityToDisableAndEnableStudentRecordPage() {
         PageFactory.initElements(driver, this);
     }
 
-    /*DISABLE BUTTON*/
+    /* DISABLE BUTTON */
     @FindBy(xpath = "//i[@class='fa fa-thumbs-o-down']")
     public WebElement disableButton;
 
-    /*REASON DROP DOWN*/
+    /* REASON DROP DOWN */
     @FindBy(xpath = "//select[@name='reason']")
     public WebElement reasonDropDown;
 
-    /*SAVE BUTTON*/
+    /* SAVE BUTTON */
     @FindBy(xpath = "//button[@data-loading-text=\"<i class='fa fa-spinner fa-spin '></i> Please wait\"]")
     public WebElement saveButton;
 
-    /*DISABLED STUDENTS SUBMODULE*/
+    /* DISABLED STUDENTS SUBMODULE */
     @FindBy(xpath = "//a[normalize-space()='Disabled Students']")
     public WebElement disabledStudentsSubmodule;
+
+    /* ENABLE BUTTON */
+    @FindBy(xpath = "//i[@class='fa fa-thumbs-o-up']")
+    public WebElement enableButton;
 
     /**
      * Finds and returns the WebElement of the dynamic delete record locator based on the provided text.
