@@ -16,7 +16,6 @@ public class Ability_To_Add_And_Remove_Expense_Heads_Steps {
     public void clicks_on_the_expense_head_module() {
         CommonMethods.click(abilityToAddAndRemoveExpenseHeadsPage.expenseHeadSubmodule);
         CucumberLogUtils.logScreenShot();
-
     }
 
     @When("adds {string} to the Expense Head text box")
