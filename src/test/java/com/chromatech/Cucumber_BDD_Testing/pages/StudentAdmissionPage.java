@@ -10,7 +10,7 @@ import static com.chromatech.utils.WebDriverUtils.driver;
 public class StudentAdmissionPage {
 
     public StudentAdmissionPage() {
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
     /*STUDENT INFORMATION MODULE*/
@@ -178,8 +178,4 @@ public class StudentAdmissionPage {
     public static String dynamicLocatorCheckBox(String text) {
         return "//*[contains(text(),'" + text + "')]//parent::tr/td/input";
     }
-
-//    public static WebElement dynamicLocatorByText(String text) {
-//        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
-//    }
 }
