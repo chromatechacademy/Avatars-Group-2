@@ -16,7 +16,7 @@ public class Ability_To_Add_And_Delete_Sections_Steps {
     AbilityToAddAndDeleteSectionsPage abilityToAddAndDeleteSectionsPage = new AbilityToAddAndDeleteSectionsPage();
     private boolean isDeleteClicked = false;
 
-    @When("user clicks on Academics module")
+    @When("user clicks on the Academics module")
     public void user_clicks_on_academics_module() {
         CommonMethods.click(abilityToAddAndDeleteSectionsPage.academicsModule);
         CucumberLogUtils.logScreenShot();

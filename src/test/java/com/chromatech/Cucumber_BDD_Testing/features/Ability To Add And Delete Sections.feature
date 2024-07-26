@@ -7,7 +7,7 @@ Feature: Ability to add and delete sections Scenario
     And enters password "123456" in the password text box
     And clicks on Sign In button
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
-    When user clicks on Academics module
+    When user clicks on the Academics module
     And user clicks on Sections submodule
     And if the section "New Section Test" exists user clicks on the delete button and accepting alert
     And adds a section "New Section Test"
