@@ -12,7 +12,7 @@ public class PageInitializer {
     public static HomeworkModulePage homeworkModulePage;
     public static IncomeModulePage incomeModulePage;
     public static LoginPage loginPage;
-    public static AbilityToAddAndDeleteStudentCategoriesPage abilityToAddAndDeletestudentCategoriesPage;
+    public static AbilityToAddAndDeleteStudentCategoriesPage abilityToAddAndDeleteStudentCategoriesPage;
     public static AbilityToAddAndRemoveExpenseHeadsPage abilityToAddAndRemoveExpenseHeadsPage;
     public static AcademicsModulePage academicsModulePage;
     public static AbilityToAddAndDeleteClassesPage abilityToAddAndDeleteClassesPage;
@@ -29,7 +29,7 @@ public class PageInitializer {
         homeworkModulePage = new HomeworkModulePage();
         incomeModulePage = new IncomeModulePage();
         loginPage = new LoginPage();
-        abilityToAddAndDeletestudentCategoriesPage = new AbilityToAddAndDeleteStudentCategoriesPage();
+        abilityToAddAndDeleteStudentCategoriesPage = new AbilityToAddAndDeleteStudentCategoriesPage();
         abilityToAddAndRemoveExpenseHeadsPage = new AbilityToAddAndRemoveExpenseHeadsPage();
         academicsModulePage = new AcademicsModulePage();
         abilityToAddAndDeleteClassesPage = new AbilityToAddAndDeleteClassesPage();
