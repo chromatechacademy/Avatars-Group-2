@@ -195,7 +195,7 @@ public class StepsImplementation extends PageInitializer {
      * This method simulates a user clicking on the Academics module.
      */
     public static void user_clicks_on_academics_module() {
-        addDeleteClassesPage.academicsModule.click();
+        abilityToAddAndDeleteClassesPage.academicsModule.click();
         CucumberLogUtils.logScreenShot();
     }
 
@@ -204,8 +204,8 @@ public class StepsImplementation extends PageInitializer {
      * Takes a screenshot after clicking.
      */
     public static void clicks_on_class_sub_module() {
-        JavascriptMethods.scrollIntoView(addDeleteClassesPage.classSubModule);
-        addDeleteClassesPage.classSubModule.click();
+        JavascriptMethods.scrollIntoView(abilityToAddAndDeleteClassesPage.classSubModule);
+        abilityToAddAndDeleteClassesPage.classSubModule.click();
         CucumberLogUtils.logScreenShot();
     }
 
@@ -218,12 +218,12 @@ public class StepsImplementation extends PageInitializer {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Boolean isElementPresent = (Boolean) js.executeScript(
                 "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
-                addDeleteClassesPage.savedClassXpath(savedClass)
+                abilityToAddAndDeleteClassesPage.savedClassXpath(savedClass)
         );
         if (isElementPresent) {
             WebElement deleteButton = (WebElement) js.executeScript(
                     "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;",
-                    addDeleteClassesPage.savedClassXpath(savedClass)
+                    abilityToAddAndDeleteClassesPage.savedClassXpath(savedClass)
             );
             deleteButton.click();
             CommonMethods.acceptAlert();
@@ -240,8 +240,8 @@ public class StepsImplementation extends PageInitializer {
      * @param text the text to be entered into the class text box
      */
     public static void enters_on_class_text_box(String text) {
-        CommonMethods.waitForVisibility(addDeleteClassesPage.classTextBox);
-        CommonMethods.sendKeys(addDeleteClassesPage.classTextBox, text);
+        CommonMethods.waitForVisibility(abilityToAddAndDeleteClassesPage.classTextBox);
+        CommonMethods.sendKeys(abilityToAddAndDeleteClassesPage.classTextBox, text);
         CucumberLogUtils.logScreenShot();
     }
 
@@ -251,7 +251,7 @@ public class StepsImplementation extends PageInitializer {
      * @param section the section where the checkbox is located
      */
     public static void clicks_on_check_box(String section) {
-        addDeleteClassesPage.sectionCheckBox(section).click();
+        abilityToAddAndDeleteClassesPage.sectionCheckBox(section).click();
         CucumberLogUtils.logScreenShot();
     }
 
@@ -260,8 +260,8 @@ public class StepsImplementation extends PageInitializer {
      * Also logs a screenshot after the button is clicked.
      */
     public static void clicks_save() {
-        JavascriptMethods.scrollIntoView(addDeleteClassesPage.saveButton);
-        addDeleteClassesPage.saveButton.click();
+        JavascriptMethods.scrollIntoView(abilityToAddAndDeleteClassesPage.saveButton);
+        abilityToAddAndDeleteClassesPage.saveButton.click();
         CucumberLogUtils.logScreenShot();
     }
 
@@ -272,7 +272,7 @@ public class StepsImplementation extends PageInitializer {
      * @param expectedMessage the message expected to be displayed indicating the record is saved
      */
     public static void record_is_saved(String expectedMessage) {
-        CommonMethods.assertEquals(addDeleteClassesPage.recordSavedMessage.getText(), expectedMessage);
+        CommonMethods.assertEquals(abilityToAddAndDeleteClassesPage.recordSavedMessage.getText(), expectedMessage);
         CucumberLogUtils.logScreenShot();
     }
 
@@ -283,7 +283,7 @@ public class StepsImplementation extends PageInitializer {
      * @param savedClass The name of the saved class to be deleted.
      */
     public static void user_clicks_on_the_delete_button_for_the_saved_class_and_accepts_alert_the_record_is_deleted(String savedClass) {
-        addDeleteClassesPage.deleteButton(savedClass).click();
+        abilityToAddAndDeleteClassesPage.deleteButton(savedClass).click();
         CommonMethods.assertEquals(CommonMethods.getAlertText(),"Delete Confirm?");
         CommonMethods.acceptAlert();
         CucumberLogUtils.logScreenShot();

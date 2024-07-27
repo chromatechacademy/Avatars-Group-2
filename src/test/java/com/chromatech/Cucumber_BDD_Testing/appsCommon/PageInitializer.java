@@ -15,7 +15,7 @@ public class PageInitializer {
     public static AbilityToAddAndDeleteStudentCategoriesPage abilityToAddAndDeletestudentCategoriesPage;
     public static AbilityToAddAndRemoveExpenseHeadsPage abilityToAddAndRemoveExpenseHeadsPage;
     public static AcademicsModulePage academicsModulePage;
-    public static AddDeleteClassesPage addDeleteClassesPage;
+    public static AbilityToAddAndDeleteClassesPage abilityToAddAndDeleteClassesPage;
     public static AddExpensePage addExpensePage;
     public static EditStudentRecordPage editStudentRecordPage;
     public static HumanResourceModulePage humanResourceModule;
@@ -32,7 +32,7 @@ public class PageInitializer {
         abilityToAddAndDeletestudentCategoriesPage = new AbilityToAddAndDeleteStudentCategoriesPage();
         abilityToAddAndRemoveExpenseHeadsPage = new AbilityToAddAndRemoveExpenseHeadsPage();
         academicsModulePage = new AcademicsModulePage();
-        addDeleteClassesPage = new AddDeleteClassesPage();
+        abilityToAddAndDeleteClassesPage = new AbilityToAddAndDeleteClassesPage();
         addExpensePage = new AddExpensePage();
         editStudentRecordPage = new EditStudentRecordPage();
         humanResourceModule = new HumanResourceModulePage();

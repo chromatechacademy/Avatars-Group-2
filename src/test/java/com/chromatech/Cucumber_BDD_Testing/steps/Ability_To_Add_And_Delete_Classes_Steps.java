@@ -5,7 +5,7 @@ import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Add_Delete_Classes_Steps extends PageInitializer {
+public class Ability_To_Add_And_Delete_Classes_Steps extends PageInitializer {
 
     @When("user clicks on Academics module")
     public void user_clicks_on_academics_module() {

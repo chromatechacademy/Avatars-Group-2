@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
-public class AddDeleteClassesPage {
+public class AbilityToAddAndDeleteClassesPage {
 
-    public  AddDeleteClassesPage() {
+    public AbilityToAddAndDeleteClassesPage() {
         PageFactory.initElements(driver, this);
     }
 
