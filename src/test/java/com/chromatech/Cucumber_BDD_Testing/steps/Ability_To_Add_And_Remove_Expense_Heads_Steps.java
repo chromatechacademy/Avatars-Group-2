@@ -1,6 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.AbilityToAddAndRemoveExpenseHeadsPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
@@ -8,9 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Ability_To_Add_And_Remove_Expense_Heads_Steps {
-
-    AbilityToAddAndRemoveExpenseHeadsPage abilityToAddAndRemoveExpenseHeadsPage = new AbilityToAddAndRemoveExpenseHeadsPage();
+public class Ability_To_Add_And_Remove_Expense_Heads_Steps extends PageInitializer {
 
     @Given("clicks on the Expense Head module")
     public void clicks_on_the_expense_head_module() {

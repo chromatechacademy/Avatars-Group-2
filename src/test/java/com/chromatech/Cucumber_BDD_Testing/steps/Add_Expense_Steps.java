@@ -1,6 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.AddExpensePage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
@@ -12,9 +12,7 @@ import java.util.ArrayList;
 import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.SCREENSHOT;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
-public class Add_Expense_Steps {
-
-    AddExpensePage addExpensePage = new AddExpensePage();
+public class Add_Expense_Steps extends PageInitializer {
 
     @When("user clicks on Expenses module")
     public void user_clicks_on_expenses_module() {

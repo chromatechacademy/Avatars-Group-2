@@ -1,6 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.AddDeleteClassesPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
@@ -10,9 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
-public class Add_Delete_Classes_Steps {
-
-    AddDeleteClassesPage addDeleteClassesPage = new AddDeleteClassesPage();
+public class Add_Delete_Classes_Steps extends PageInitializer {
 
     @When("user clicks on Academics module")
     public void user_clicks_on_academics_module() {

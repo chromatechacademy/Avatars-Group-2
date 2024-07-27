@@ -1,14 +1,12 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.AbilityToAddAndDeleteStudentCategoriesPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Ability_To_Add_And_Delete_Student_Categories_Steps {
-
-    AbilityToAddAndDeleteStudentCategoriesPage abilityToAddAndDeletestudentCategoriesPage = new AbilityToAddAndDeleteStudentCategoriesPage();
+public class Ability_To_Add_And_Delete_Student_Categories_Steps extends PageInitializer {
 
     @When("a CTSMS user navigates to the Student Information module")
     public void a_ctsms_user_navigates_to_the_student_information_module() {

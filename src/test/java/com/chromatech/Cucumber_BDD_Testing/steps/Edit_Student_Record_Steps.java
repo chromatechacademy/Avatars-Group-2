@@ -1,14 +1,12 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.EditStudentRecordPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Edit_Student_Record_Steps {
-
-    EditStudentRecordPage editStudentRecordPage = new EditStudentRecordPage();
+public class Edit_Student_Record_Steps extends PageInitializer {
 
     @Then("user clicks on the Student Details submodule")
     public void user_clicks_on_the_student_details_submodule() {

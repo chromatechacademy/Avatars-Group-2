@@ -1,7 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionPage;
-import com.chromatech.Cucumber_BDD_Testing.pages.VerifyingStudentDataPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.FrameworkConstants;
@@ -16,10 +15,7 @@ import java.util.List;
 import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.*;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
-public class Verifying_Student_Data_Steps {
-
-    VerifyingStudentDataPage verifyingStudentDataPage = new VerifyingStudentDataPage();
-    StudentAdmissionPage studentAdmissionPage = new StudentAdmissionPage();
+public class Verifying_Student_Data_Steps extends PageInitializer {
 
     @Then("clicks on Student Details sub module")
     public void clicks_on_student_details_sub_module() {

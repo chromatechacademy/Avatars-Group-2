@@ -1,6 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.StudentAdmissionPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import com.chromatech.utils.JavascriptMethods;
@@ -10,9 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
-public class Student_Admission_Steps {
+public class Student_Admission_Steps extends PageInitializer {
 
-    StudentAdmissionPage studentAdmissionPage = new StudentAdmissionPage();
     private boolean isCheckboxClicked = false;
 
     @When("user clicks on Student Information module")
