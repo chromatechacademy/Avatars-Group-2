@@ -8,6 +8,13 @@ Feature:  Ability to disable and enable student records
     And clicks on Sign In button
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Student Information module
+    And user clicks on the Bulk Delete submodule
+    And selects "SDET" for the class drop-down
+    And selects "Cucumber Fundamentals" for the section drop-down
+    And clicks on the Search button
+    When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
+    And clicks on the checkbox with the unique admission number "2589"
+    And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
     And clicks on Student Admission sub module
     And enters Unique Admission Number "2589"
     And selects "SDET" for class drop down
