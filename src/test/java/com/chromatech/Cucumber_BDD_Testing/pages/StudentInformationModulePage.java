@@ -8,6 +8,10 @@ import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class StudentInformationModulePage {
 
+    public StudentInformationModulePage() {
+        PageFactory.initElements(driver, this);
+    }
+
     /* STUDENT INFORMATION MODULE */
     @FindBy(xpath = "//span[normalize-space()='Student Information']")
     public WebElement studentInformationModule;
@@ -15,8 +19,4 @@ public class StudentInformationModulePage {
     /* COMMON PATH FOR ALL STUDENT SUB MODULES */
     @FindBy(xpath = "//ul[@class='treeview-menu menu-open']//a")
     public List<WebElement> studentSubModules;
-
-    public StudentInformationModulePage() {
-        PageFactory.initElements(driver, this);
-    }
 }
