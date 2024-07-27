@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static com.chromatech.utils.WebDriverUtils.driver;
+
 public class ClassAndSectionsPage {
 
     public ClassAndSectionsPage() {
@@ -45,21 +47,23 @@ public class ClassAndSectionsPage {
     public WebElement actualAlertSaveText;
 
     /**
-     * Finds and returns a WebElement using a dynamic locator based on the index.
-     * The method searches for an input element located after the text "Sections" and its following sibling div.
-     * The index parameter specifies the position of the input element to be found.
+     * Finds a WebElement in a table to delete based on the given text.
      *
-     * @param number the index of the input element to be found
-     * @return the WebElement representing the input element at the specified index
+     * @param text the text to search for in the table
+     * @return the WebElement to delete
      */
-    public static WebElement dynamicLocatorByIndex(Integer number) {
-        return WebDriverUtils.driver.findElement(By.xpath("((//*[contains(text(),'Sections')])[2]/following-sibling::div/label/input)[" + number + "]"));
+    public WebElement findElementInTableDelete(String text) {
+        String dynamicXpath = "//*[contains(text(),'" + text + "')]/following-sibling::td/following-sibling::td/a/following-sibling::a/i";
+        WebElement element = driver.findElement(By.xpath(dynamicXpath));
+        return element;
     }
 
 
 
 
+// DELETE BUTTON //*[contains(text(),'Cyber Security')]/following-sibling::td/following-sibling::td/a/following-sibling::a/i
 
+//DELETE BUTTON //*[contains(text(),'SDET')]/following-sibling::td/following-sibling::td/a/following-sibling::a/i
 
 //Cyber Security
 //  (//*[contains(text(),'Cyber Security')]/following-sibling::td/div)[1]

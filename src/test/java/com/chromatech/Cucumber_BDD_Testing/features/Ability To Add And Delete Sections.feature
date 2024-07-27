@@ -9,6 +9,7 @@ Feature: Ability to add and delete sections Scenario
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on the Academics module
     And user clicks on Sections submodule
+
     And if the section "New Section Test" exists user clicks on the delete button and accepting alert
     And adds a section "New Section Test"
     And clicks on the Save button
