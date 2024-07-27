@@ -8,4 +8,4 @@ Feature: Income Module Scenario
     And clicks on Sign In button
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Income module
-    Then the following submodules are displayed:"Add Income", "Search Income", "Income Head"
+    Then the following submodules displayed:"Add Income", "Search Income", "Income Head"

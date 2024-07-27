@@ -11,19 +11,19 @@ public class IncomeModulePage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    //Income Module
+    /* INCOME MODULE */
     @FindBy(xpath = "//span[normalize-space()='Income']")
     public WebElement incomeModule;
 
-    //Add Income Submodule
+    /* ADD INCOME SUBMODULE */
     @FindBy(xpath = "//body[1]/div[1]/aside[1]/div[1]/section[1]/ul[2]/li[3]/ul[1]/li[1]/a[1]")
     public WebElement addIncomeSubmodule;
 
-    //Search Income Submodule
+    /* SEARCH INCOME SUBMODULE */
     @FindBy(xpath = "//a[normalize-space()='Search Income']")
     public WebElement searchIncomeSubmodule;
 
-    //Income Head Submodule
+    /* INCOME HEAD SUBMODULE */
     @FindBy(xpath = "//a[normalize-space()='Income Head']")
     public WebElement incomeHeadSubmodule;
 }
