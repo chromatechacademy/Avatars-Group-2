@@ -14,100 +14,105 @@ public class VerifyingStudentDataPage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    /*STUDENT DETAILS SUB MODULE*/
+    /* STUDENT DETAILS SUB MODULE */
     @FindBy(xpath = "(//a[normalize-space()='Student Details'])[2]")
     public WebElement studentDetailsSubModule;
 
-    /*STUDENT PHONE NUMBER*/
+    /* STUDENT PHONE NUMBER */
     @FindBy(xpath = "(//input[@name='custom_fields[students][1]'])[1]")
     public WebElement studentPhoneNumber;
 
-    /*ADD MORE DETAILS MODULE*/
+    /* ADD MORE DETAILS MODULE */
     @FindBy(xpath = "//a[normalize-space()='Add More Details']")
     public WebElement addMoreDetailsModule;
 
-    /*IF GUARDIAN ADDRESS IS CURRENT ADDRESS CHECK BOX*/
+    /* IF GUARDIAN ADDRESS IS CURRENT ADDRESS CHECK BOX */
     @FindBy(xpath = "//input[@id='autofill_current_address']")
     public WebElement currentAddressCheckBox;
 
-    /*BANK ACCOUNT TEXT BOX*/
+    /* BANK ACCOUNT TEXT BOX */
     @FindBy(xpath = "//input[@id='bank_account_no']")
     public WebElement bankAccountTextBox;
 
-    /*BANK NAME TEXT BOX*/
+    /* BANK NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='bank_name']")
     public WebElement bankNameBox;
 
-    /*IFSC CODE TEXT BOX*/
+    /* IFSC CODE TEXT BOX */
     @FindBy(xpath = "//input[@id='ifsc_code']")
     public WebElement ifscCodeBox;
 
-    /*NATIONAL IDENTIFICATION NUMBER TEXT BOX*/
+    /* NATIONAL IDENTIFICATION NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='adhar_no']")
     public WebElement nationalIdentificationNumberTextBox;
 
-    /*LOCAL IDENTIFICATION NUMBER TEXT BOX*/
+    /* LOCAL IDENTIFICATION NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='samagra_id']")
     public WebElement localIdentificationNumberTextBox;
 
-    /*PREVIOUS SCHOOL INFORMATION TEXT BOX*/
+    /* PREVIOUS SCHOOL INFORMATION TEXT BOX */
     @FindBy(xpath = "//textarea[@name='previous_school']")
     public WebElement previousSchoolInformationTextBox;
 
-    /*NOTE TEXT BOX*/
+    /* NOTE TEXT BOX */
     @FindBy(xpath = "//textarea[@name='note']")
     public WebElement noteTextBox;
 
-    /*STUDENT PHOTO BOX*/
+    /* STUDENT PHOTO BOX */
     @FindBy(xpath = "(//input[@id='file'])[1]")
     public WebElement studentPhotoBox;
 
-    /*FATHER PHOTO BOX*/
+    /* FATHER PHOTO BOX */
     @FindBy(xpath = "(//input[@id='file'])[2]")
     public WebElement fatherPhotoBox;
 
-    /*MOTHER PHOTO BOX*/
+    /* MOTHER PHOTO BOX */
     @FindBy(xpath = "(//input[@id='file'])[3]")
     public WebElement motherPhotoBox;
 
-    /*DOCUMENT BOX 1*/
+    /* DOCUMENT BOX 1 */
     @FindBy(xpath = "//input[@name='first_doc']")
     public WebElement documentBoxOne;
 
-    /*DOCUMENT BOX 2*/
+    /* DOCUMENT BOX 2 */
     @FindBy(xpath = "//input[@name='second_doc']")
     public WebElement documentBoxTwo;
 
-    /*DOCUMENT BOX 3*/
+    /* DOCUMENT BOX 3 */
     @FindBy(xpath = "//input[@name='fourth_doc']")
     public WebElement documentBoxThree;
 
-    /*DOCUMENT BOX 4*/
+    /* DOCUMENT BOX 4 */
     @FindBy(xpath = "//input[@name='fifth_doc']")
     public WebElement documentBoxFour;
 
-    /*SEARCH BY KEYWORD TEXT BOX*/
+    /* SEARCH BY KEYWORD TEXT BOX */
     @FindBy(xpath = "//input[@class='form-control']")
     public WebElement searchByKeywordTextBox;
 
-    /*LOCATOR FOR THE STUDENT DETAILS*/
-    public List<WebElement> dynamicLocator(String text) {
-        return driver.findElements(By.xpath("//*[contains(text(),\"" + text + "\")]"));
-    }
-
-    /*LOCATOR FOR THE FIRST DOCUMENT TITLE TEXT BOX*/
+    /* LOCATOR FOR THE FIRST DOCUMENT TITLE TEXT BOX */
     @FindBy(xpath = "//input[@name='first_title']")
     public WebElement firstTitleTextBox;
 
-    /*LOCATOR FOR THE SECOND DOCUMENT TITLE TEXT BOX*/
+    /* LOCATOR FOR THE SECOND DOCUMENT TITLE TEXT BOX */
     @FindBy(xpath = "//input[@name='second_title']")
     public WebElement secondTitleTextBox;
 
-    /*LOCATOR FOR THE THIRD DOCUMENT TITLE TEXT BOX*/
+    /* LOCATOR FOR THE THIRD DOCUMENT TITLE TEXT BOX */
     @FindBy(xpath = "//input[@name='fourth_title']")
     public WebElement thirdTitleTextBox;
 
-    /*LOCATOR FOR THE FOURTH DOCUMENT TITLE TEXT BOX*/
+    /* LOCATOR FOR THE FOURTH DOCUMENT TITLE TEXT BOX */
     @FindBy(xpath = "//input[@name='fifth_title']")
     public WebElement fourthTitleTextBox;
+
+    /**
+     * Finds and returns the dynamic locator for the student details based on the given text value.
+     *
+     * @param text the text value to be matched with the element text using contains()
+     * @return the list of WebElements
+     */
+    public List<WebElement> dynamicLocator(String text) {
+        return driver.findElements(By.xpath("//*[contains(text(),\"" + text + "\")]"));
+    }
 }

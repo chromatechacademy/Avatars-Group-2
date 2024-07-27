@@ -7,6 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AbilityToAddAndDeleteStudentCategoriesPage {
 
+    public AbilityToAddAndDeleteStudentCategoriesPage() {
+        PageFactory.initElements(WebDriverUtils.driver, this);
+    }
+
     /* STUDENT INFORMATION MODULE */
     @FindBy(xpath = "//span[normalize-space()='Student Information']")
     public WebElement studentInformationModule;
@@ -30,8 +34,4 @@ public class AbilityToAddAndDeleteStudentCategoriesPage {
     /* DELETE BUTTON */
     @FindBy(xpath = "//*[contains(text(),'Oleksandra')]/following-sibling::td[2]/a[2]")
     public WebElement deleteButton;
-
-     public AbilityToAddAndDeleteStudentCategoriesPage() {
-        PageFactory.initElements(WebDriverUtils.driver, this);
-    }
 }
