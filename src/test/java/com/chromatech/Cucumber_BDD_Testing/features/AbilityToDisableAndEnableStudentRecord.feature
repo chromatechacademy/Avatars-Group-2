@@ -18,7 +18,7 @@ Feature:  Ability to disable and enable student records
     And clicks on Student Admission sub module
     And enters Unique Admission Number "2589"
     And selects "SDET" for class drop down
-    And selects "Cucumber Fundamentals" for section drop down
+    And selects "Cucumber Fundamentals" for section drop down::q!
     And enters first name "Stanislav"
     And enters last name "Gomon"
     And selects "Male" from gender drop down
