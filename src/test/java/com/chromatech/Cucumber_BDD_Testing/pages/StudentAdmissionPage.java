@@ -165,10 +165,6 @@ public class StudentAdmissionPage {
         return element;
     }
 
-    public static WebElement dynamicLocatorByText(String text) {
-        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
-    }
-
     /**
      * Finds and returns the dynamic locator for a checkbox based on the given text value.
      *
@@ -178,8 +174,6 @@ public class StudentAdmissionPage {
     public static String dynamicLocatorCheckBox(String text) {
         return "//*[contains(text(),'" + text + "')]//parent::tr/td/input";
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Finds and returns the dynamic locator based on the given text value.
@@ -190,5 +184,4 @@ public class StudentAdmissionPage {
     public static WebElement dynamicLocatorByText(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
     }
->>>>>>> a199a82d954577567344b4070c69d718f90bdc46
 }
