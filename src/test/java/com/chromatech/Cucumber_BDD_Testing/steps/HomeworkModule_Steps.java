@@ -1,14 +1,12 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.HomeworkModulePage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class HomeworkModule_Steps {
-
-    HomeworkModulePage homeworkModulePage = new HomeworkModulePage();
+public class HomeworkModule_Steps extends PageInitializer {
 
     @When("the user clicks on the Homework module")
     public void the_user_clicks_on_the_homework_module() {
