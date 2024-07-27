@@ -13,23 +13,23 @@ public class AbilityToAddAndRemoveExpenseHeadsPage {
         PageFactory.initElements(driver, this);
     }
 
-    //Expense Head Submodule
+    /* EXPENSE HEAD MODULE */
     @FindBy(xpath = "//a[normalize-space()='Expense Head']//i[@class='fa fa-angle-double-right']")
     public WebElement expenseHeadSubmodule;
 
-    //Expense Head Text Box
+    /* EXPENSE HEAD TEXT BOX */
     @FindBy(xpath = "//input[@name='expensehead']")
     public WebElement expenseHeadTextBox;
 
-    //Expense Head Description text box
+    /* EXPENSE HEAD DESCRIPTION TEXT BOX */
     @FindBy(xpath = "//textarea[@name='description']")
     public WebElement expenseHeadDescription;
 
-    //Save button
+    /* SAVE BUTTON */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    // Alert Success text
+    /* ALERT SUCCESS TEXT */
     @FindBy(xpath = "//div[@class='alert alert-success text-left']")
     public WebElement actualAlertSuccessText;
 

@@ -1,8 +1,7 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
 import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
-import com.chromatech.utils.CommonMethods;
-import com.chromatech.utils.CucumberLogUtils;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -10,13 +9,11 @@ public class HomeworkModule_Steps extends PageInitializer {
 
     @When("the user clicks on the Homework module")
     public void the_user_clicks_on_the_homework_module() {
-        homeworkModulePage.homeworkBtn.click();
-        CucumberLogUtils.logScreenShot();
+        StepsImplementation.the_user_clicks_on_the_homework_module();
     }
 
     @Then("the following module displays: {string}")
     public void the_following_module_displays(String addHomeworkBtn) {
-        CommonMethods.assertEquals(homeworkModulePage.addHomeworkBtn.getText(), addHomeworkBtn);
-        CucumberLogUtils.logScreenShot();
+        StepsImplementation.the_following_module_displays(addHomeworkBtn);
     }
 }

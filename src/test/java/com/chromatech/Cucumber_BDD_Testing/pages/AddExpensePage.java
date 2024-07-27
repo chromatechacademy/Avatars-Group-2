@@ -11,51 +11,47 @@ public class AddExpensePage {
         PageFactory.initElements(driver, this);
     }
 
-    //Expenses Module
+    /* EXPENSES MODULE */
     @FindBy(xpath = "//span[normalize-space()='Expenses']")
     public WebElement expensesModule;
 
-    //Add Expense Sub Module
+    /* ADD EXPENSE SUB MODULE */
     @FindBy(xpath = "//a[normalize-space()='Add Expense']//i[@class='fa fa-angle-double-right']")
     public WebElement addExpenseSubModule;
 
-    //Expense Head drop down
+    /* EXPENSE HEAD DROP DOWN */
     @FindBy(xpath = "//select[@id='exp_head_id']")
     public WebElement expenseHeadDropDown;
 
-    //Name Text Box
+    /* NAME TEXT BOX */
     @FindBy(xpath = "//input[@id='name']")
     public WebElement nameTextBox;
 
-    //Invoice Number Text Box
+    /* INVOICE NUMBER TEXT BOX */
     @FindBy(xpath = "//input[@id='invoice_no']")
     public WebElement invoiceNumberTextBox;
 
-    //Calendar Picker
+    /* CALENDER PICKER */
     @FindBy(xpath = "//input[@id='date']")
     public WebElement calendarPicker;
 
-    // Amount Text Box
+    /* AMOUNT TEXT BOX */
     @FindBy(xpath = "//input[@id='amount']")
     public WebElement amountTextBox;
 
-    //Attach File
+    /* ATTACH FILE */
     @FindBy(xpath = "//input[@id='documents']")
     public WebElement file;
 
-    public static String locatorForFile(String file) {
-        return System.getProperty("user.dir") + file;
-    }
-
-    // Description Box
+    /* DESCRIPTION BOX */
     @FindBy(xpath = "//textarea[@id='description']")
     public WebElement descriptionBox;
 
-    //Save Button
+    /* SAVE BUTTON */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    //Remove Expense
+    /* REMOVE EXPENSE */
     @FindBy(xpath = "//td[text()='54321']/following-sibling::td[4]/a[3]")
     public WebElement removeExpense;
 }
