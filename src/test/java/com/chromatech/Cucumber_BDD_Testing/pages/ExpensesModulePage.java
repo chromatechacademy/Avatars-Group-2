@@ -11,15 +11,15 @@ public class ExpensesModulePage {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
-    //Add Expense Submodule
+    /* ADD EXPENSE SUBMODULE */
     @FindBy(xpath = "//ul[@class='treeview-menu menu-open']//a[normalize-space()='Add Expense']")
     public WebElement addExpenseSubmodule;
 
-    //Search Expense Submodule
+    /* SEARCH EXPENSE SUBMODULE */
     @FindBy(xpath = "//a[normalize-space()='Search Expense']")
     public WebElement searchExpenseSubmodule;
 
-    //Expense Head Submodule
+    /* EXPENSE HEAD SUBMODULE */
     @FindBy(xpath = "//a[normalize-space()='Expense Head']")
     public WebElement expenseHeadSubmodule;
 }
