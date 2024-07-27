@@ -1,14 +1,12 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.IncomeModulePage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Income_Module_Steps {
-
-    IncomeModulePage incomeModulePage = new IncomeModulePage();
+public class Income_Module_Steps extends PageInitializer {
 
     @When("user clicks on Income module")
     public void user_clicks_on_income_module() {

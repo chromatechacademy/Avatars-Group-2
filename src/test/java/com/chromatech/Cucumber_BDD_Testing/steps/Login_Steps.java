@@ -1,5 +1,6 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
@@ -14,14 +15,12 @@ public class Login_Steps {
 
     @Given("a Chroma Tech Academy teacher or admin is on the login page {string}")
     public void a_chroma_tech_academy_teacher_or_admin_is_on_the_login_page(String url) {
-        driver.get(url);
-        CucumberLogUtils.logScreenShot();
+        StepsImplementation.a_chroma_tech_academy_teacher_or_admin_is_on_the_login_page(url);
     }
 
     @When("the user enters username {string} in username text box")
     public void the_user_enters_username_in_username_text_box(String usernameText) {
-        CommonMethods.sendKeys(loginPage.usernameTextBox, usernameText);
-        CucumberLogUtils.logScreenShot();
+        StepsImplementation.the_user_enters_username_in_username_text_box(usernameText);
     }
 
     @When("enters password {string} in the password text box")
