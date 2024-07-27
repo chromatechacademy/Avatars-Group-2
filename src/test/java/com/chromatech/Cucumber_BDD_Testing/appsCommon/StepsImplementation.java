@@ -200,7 +200,7 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
-     * Scrolls the page to the element representing the class sub-module, and clicks on it.
+     * Scrolls the page to the element representing the class submodule, and clicks on it.
      * Takes a screenshot after clicking.
      */
     public static void clicks_on_class_sub_module() {
@@ -240,6 +240,7 @@ public class StepsImplementation extends PageInitializer {
      * @param text the text to be entered into the class text box
      */
     public static void enters_on_class_text_box(String text) {
+        CommonMethods.waitForVisibility(addDeleteClassesPage.classTextBox);
         CommonMethods.sendKeys(addDeleteClassesPage.classTextBox, text);
         CucumberLogUtils.logScreenShot();
     }
@@ -289,7 +290,7 @@ public class StepsImplementation extends PageInitializer {
     }
 
     /**
-     * This method simulates a user clicking on the expenses module.
+     * This method simulates a user clicking on the expenses-module.
      * It utilizes the click method from the CommonMethods class to perform the click action on the expenses module element.
      * After the click action, it logs a screenshot using the CucumberLogUtils class.
      */
@@ -310,7 +311,7 @@ public class StepsImplementation extends PageInitializer {
     /**
      * This method selects a value from the expense head drop down menu.
      *
-     * @param expenseHeadText the text to select from the drop down menu
+     * @param expenseHeadText the text to select from the dropdown menu
      */
     public static void selects_for_expense_head_drop_down(String expenseHeadText) {
         CommonMethods.selectDropDownValue(expenseHeadText, addExpensePage.expenseHeadDropDown);
@@ -423,7 +424,7 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Enters a unique admission number in the search by keyword text box.
      *
-     * @param searchByKeywordTex The unique admission number to enter in the search by keyword text box.
+     * @param searchByKeywordTex The unique admission number to enter into the search by keyword text box.
      */
     public static void user_enters_unique_admission_number_in_search_by_keyword_text_box(String searchByKeywordTex) {
         CommonMethods.sendKeys(editStudentRecordPage.searchByKeywordTextbox, searchByKeywordTex);

@@ -5,7 +5,7 @@ import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class HomeworkModule_Steps extends PageInitializer {
+public class Homework_Module_Steps extends PageInitializer {
 
     @When("the user clicks on the Homework module")
     public void the_user_clicks_on_the_homework_module() {
