@@ -41,7 +41,7 @@ public class StepsImplementation extends PageInitializer {
      * This method clicks on the student information module and logs a screenshot.
      */
     public static void a_ctsms_user_navigates_to_the_student_information_module() {
-        abilityToAddAndDeletestudentCategoriesPage.studentInformationModule.click();
+        abilityToAddAndDeleteStudentCategoriesPage.studentInformationModule.click();
         CucumberLogUtils.logScreenShot();
     }
 
@@ -50,7 +50,7 @@ public class StepsImplementation extends PageInitializer {
      * This method clicks on the student categories submodule and logs a screenshot.
      */
     public static void navigates_to_the_student_categories_submodule() {
-        abilityToAddAndDeletestudentCategoriesPage.studentCategoriesSubModule.click();
+        abilityToAddAndDeleteStudentCategoriesPage.studentCategoriesSubModule.click();
         CucumberLogUtils.logScreenShot();
     }
 
@@ -60,9 +60,9 @@ public class StepsImplementation extends PageInitializer {
      * @param expectedCategoryText the text of the category to be added and saved
      */
     public static void adding_and_saving_a_new_student_category(String expectedCategoryText) {
-        CommonMethods.sendKeys(abilityToAddAndDeletestudentCategoriesPage.categoryTextBox, expectedCategoryText);
+        CommonMethods.sendKeys(abilityToAddAndDeleteStudentCategoriesPage.categoryTextBox, expectedCategoryText);
         CucumberLogUtils.logScreenShot();
-        abilityToAddAndDeletestudentCategoriesPage.saveButton.click();
+        abilityToAddAndDeleteStudentCategoriesPage.saveButton.click();
     }
 
     /**
@@ -72,7 +72,7 @@ public class StepsImplementation extends PageInitializer {
      */
     public static void the_student_category_is_saved(String expectedSuccessMessage) {
         CucumberLogUtils.logScreenShot();
-        CommonMethods.assertEquals(abilityToAddAndDeletestudentCategoriesPage.actualSuccessMessage.getText(), expectedSuccessMessage);
+        CommonMethods.assertEquals(abilityToAddAndDeleteStudentCategoriesPage.actualSuccessMessage.getText(), expectedSuccessMessage);
     }
 
     /**
@@ -81,7 +81,7 @@ public class StepsImplementation extends PageInitializer {
      * @param expectedAlertText The expected text of the alert message.
      */
     public static void the_user_is_also_able_to_delete_the_student_category_and_accepting_alert(String expectedAlertText) {
-        abilityToAddAndDeletestudentCategoriesPage.deleteButton.click();
+        abilityToAddAndDeleteStudentCategoriesPage.deleteButton.click();
         CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
         CommonMethods.acceptAlert();
         CucumberLogUtils.logScreenShot();
