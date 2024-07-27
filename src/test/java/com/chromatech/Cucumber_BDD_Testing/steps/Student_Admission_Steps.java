@@ -14,13 +14,7 @@ public class Student_Admission_Steps extends PageInitializer {
 
     @When("clicks on Student Admission sub module")
     public void clicks_on_student_admission_sub_module() {
-<<<<<<< HEAD
-        CommonMethods.waitForClickability(studentAdmissionPage.studentAdmissionSubModule);
-        CommonMethods.click(studentAdmissionPage.studentAdmissionSubModule);
-        CucumberLogUtils.logScreenShot();
-=======
         StepsImplementation.clicks_on_student_admission_sub_module();
->>>>>>> a199a82d954577567344b4070c69d718f90bdc46
     }
 
     @When("enters Unique Admission Number {string}")
@@ -125,12 +119,7 @@ public class Student_Admission_Steps extends PageInitializer {
 
     @When("saves submission")
     public void saves_submission() {
-<<<<<<< HEAD
-        JavascriptMethods.scrollIntoView(studentAdmissionPage.saveButton);
-        CommonMethods.click(studentAdmissionPage.saveButton);
-=======
         StepsImplementation.saves_submission();
->>>>>>> a199a82d954577567344b4070c69d718f90bdc46
     }
 
     @When("enters guardian address {string}")
@@ -160,13 +149,7 @@ public class Student_Admission_Steps extends PageInitializer {
 
     @Then("the student is successfully admitted {string}")
     public void the_student_is_successfully_admitted(String expectedAlertSuccessText) {
-<<<<<<< HEAD
-        CucumberLogUtils.logScreenShot();
-        JavascriptMethods.scrollIntoView(studentAdmissionPage.actualAlertSuccessText);
-        CommonMethods.assertEquals(studentAdmissionPage.actualAlertSuccessText.getText(), expectedAlertSuccessText);
-=======
         StepsImplementation.the_student_is_successfully_admitted(expectedAlertSuccessText);
->>>>>>> a199a82d954577567344b4070c69d718f90bdc46
     }
 
     @When("the user is on the {string} page")
@@ -206,37 +189,11 @@ public class Student_Admission_Steps extends PageInitializer {
 
     @When("if the record admission number {string} exists user clicks on the checkbox")
     public void if_the_record_admission_number_exists_user_clicks_on_the_checkbox(String admissionNumber) {
-<<<<<<< HEAD
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        Boolean isElementPresent = (Boolean) js.executeScript(
-                "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
-                studentAdmissionPage.dynamicLocatorCheckBox(admissionNumber)
-        );
-
-        if (isElementPresent) {
-            WebElement checkbox = studentAdmissionPage.dynamicLocator(admissionNumber);
-            checkbox.click();
-            CucumberLogUtils.logScreenShot();
-            isCheckboxClicked = true;
-        }
-=======
         StepsImplementation.if_the_record_admission_number_exists_user_clicks_on_the_checkbox(admissionNumber);
->>>>>>> a199a82d954577567344b4070c69d718f90bdc46
     }
 
     @When("if the unique admission number exists clicks the Delete button and accepting alert {string}")
     public void if_the_unique_admission_number_exists_clicks_the_delete_button_and_accepting_alert(String expectedAlertText) {
-<<<<<<< HEAD
-        if (isCheckboxClicked) {
-            JavascriptMethods.scrollIntoView(studentAdmissionPage.deleteButton);
-            CommonMethods.click(studentAdmissionPage.deleteButton);
-            CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
-            CommonMethods.acceptAlert();
-            JavascriptMethods.scrollIntoView(studentAdmissionPage.searchButton);
-            CucumberLogUtils.logScreenShot();
-        }
-=======
         StepsImplementation.if_the_unique_admission_number_exists_clicks_the_delete_button_and_accepting_alert(expectedAlertText);
->>>>>>> a199a82d954577567344b4070c69d718f90bdc46
     }
 }
