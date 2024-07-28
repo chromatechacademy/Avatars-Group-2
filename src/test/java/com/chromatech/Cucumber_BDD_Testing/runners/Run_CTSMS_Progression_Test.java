@@ -1,9 +1,7 @@
 package com.chromatech.Cucumber_BDD_Testing.runners;
 
-import com.chromatech.Cucumber_BDD_Testing.appsCommon.RetryListener;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.Listeners;
 
 @CucumberOptions(plugin = { "html:target/cucumber-reports/cucumber-html-report.html","json:target/cucumber.json",
         "rerun:target/failed.txt",
@@ -14,6 +12,5 @@ import org.testng.annotations.Listeners;
         dryRun = false
 )
 
-@Listeners(RetryListener.class)
 public class Run_CTSMS_Progression_Test extends AbstractTestNGCucumberTests {
 }
