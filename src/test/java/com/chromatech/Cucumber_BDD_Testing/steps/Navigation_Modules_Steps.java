@@ -1,13 +1,12 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.NavigationModulesPage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
 
-public class Navigation_Modules_Steps {
-
-    NavigationModulesPage navigationModulesPage = new NavigationModulesPage();
+public class Navigation_Modules_Steps extends PageInitializer {
 
     @Then("the following modules are displayed: {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void the_following_modules_are_displayed(String expectedStudentInformationText, String expectedFeesCollectionText, String expectedIncomeText, String expectedExpensesText, String expectedAcademicsText, String expectedHumanResourceText, String expectedHomeworkText, String expectedReportsText) {
@@ -21,4 +20,7 @@ public class Navigation_Modules_Steps {
         CommonMethods.assertEquals(navigationModulesPage.homeworkModule.getText(), expectedHomeworkText);
         CommonMethods.assertEquals(navigationModulesPage.reportsModule.getText(), expectedReportsText);
     }
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.chromatech.Cucumber_BDD_Testing.steps;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.FeesCollectionModulePage;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.chromatech.Cucumber_BDD_Testing.appsCommon.StepsImplementation;
 import com.chromatech.utils.CommonMethods;
 import com.chromatech.utils.CucumberLogUtils;
 import io.cucumber.java.en.Then;
@@ -9,14 +10,11 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fees_Collection_Module_Steps {
-
-    FeesCollectionModulePage feesCollectionModulePage = new FeesCollectionModulePage();
+public class Fees_Collection_Module_Steps extends PageInitializer {
 
     @When("the user clicks on Fees Collection module")
     public void the_user_clicks_on_fees_collection_module() {
-        CommonMethods.click(feesCollectionModulePage.feesCollectionModule);
-        CucumberLogUtils.logScreenShot();
+        StepsImplementation.the_user_clicks_on_fees_collection_module();
     }
 
     @Then("the following submodules display")

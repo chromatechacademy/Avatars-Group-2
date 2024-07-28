@@ -24,6 +24,8 @@ public class PageInitializer {
     public static StudentInformationModulePage studentInformationModulePage;
     public static VerifyingStudentDataPage verifyingStudentDataPage;
     public static ExpensesModulePage expensesModule;
+    public static FeesCollectionModulePage feesCollectionModulePage;
+    public static NavigationModulesPage navigationModulesPage;
 
     public static void initializeAllPages() {
         homeworkModulePage = new HomeworkModulePage();
@@ -35,7 +37,9 @@ public class PageInitializer {
         abilityToAddAndDeleteClassesPage = new AbilityToAddAndDeleteClassesPage();
         addExpensePage = new AddExpensePage();
         editStudentRecordPage = new EditStudentRecordPage();
+        feesCollectionModulePage = new FeesCollectionModulePage();
         humanResourceModule = new HumanResourceModulePage();
+        navigationModulesPage = new NavigationModulesPage();
         studentAdmissionPage = new StudentAdmissionPage();
         studentAdmissionWithUniqueNumberPage = new StudentAdmissionWithUniqueNumberPage();
         studentInformationModulePage = new StudentInformationModulePage();

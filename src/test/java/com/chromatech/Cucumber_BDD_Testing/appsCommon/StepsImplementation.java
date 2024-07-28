@@ -6,13 +6,24 @@ import com.chromatech.utils.JavascriptMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.*;
 import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.FATHER_PHOTO_FILEPATH;
 import static com.chromatech.utils.WebDriverUtils.driver;
 
 public class StepsImplementation extends PageInitializer {
+
+    /**
+     * Clicking on the fees collection module.
+     * This method performs click operation
+     */
+    public static void the_user_clicks_on_fees_collection_module() {
+        CommonMethods.click(feesCollectionModulePage.feesCollectionModule);
+        CucumberLogUtils.logScreenShot();
+    }
 
     private static boolean isCheckboxClicked = false;
 
@@ -170,14 +181,14 @@ public class StepsImplementation extends PageInitializer {
     /**
      * This method verifies that the following submodules are displayed on the academics module page.
      *
-     * @param expectedClassTimetableSubmoduleText   The expected text for the Class Timetable submodule.
-     * @param expectedTeacherTimetableSubmoduleText The expected text for the Teacher Timetable submodule.
+     * @param expectedClassTimetableSubmoduleText     The expected text for the Class Timetable submodule.
+     * @param expectedTeacherTimetableSubmoduleText   The expected text for the Teacher Timetable submodule.
      * @param expectedAssignClassTeacherSubmoduleText The expected text for the Assign Class Teacher submodule.
-     * @param expectedPromoteStudentSubmoduleText The expected text for the Promote Student submodule.
-     * @param expectedSubjectGroupSubmoduleText The expected text for the Subject Group submodule.
-     * @param expectedSubjectsSubmoduleText The expected text for the Subjects submodule.
-     * @param expectedClassSubmoduleText The expected text for the Class submodule.
-     * @param expectedSectionsSubmoduleText The expected text for the Sections submodule.
+     * @param expectedPromoteStudentSubmoduleText     The expected text for the Promote Student submodule.
+     * @param expectedSubjectGroupSubmoduleText       The expected text for the Subject Group submodule.
+     * @param expectedSubjectsSubmoduleText           The expected text for the Subjects submodule.
+     * @param expectedClassSubmoduleText              The expected text for the Class submodule.
+     * @param expectedSectionsSubmoduleText           The expected text for the Sections submodule.
      */
     public static void the_following_submodules_are_displayed(String expectedClassTimetableSubmoduleText, String expectedTeacherTimetableSubmoduleText, String expectedAssignClassTeacherSubmoduleText, String expectedPromoteStudentSubmoduleText, String expectedSubjectGroupSubmoduleText, String expectedSubjectsSubmoduleText, String expectedClassSubmoduleText, String expectedSectionsSubmoduleText) {
         CucumberLogUtils.logScreenShot();
@@ -189,6 +200,30 @@ public class StepsImplementation extends PageInitializer {
         CommonMethods.assertEquals(academicsModulePage.subjectsSubmodule.getText(), expectedSubjectsSubmoduleText);
         CommonMethods.assertEquals(academicsModulePage.classSubmodule.getText(), expectedClassSubmoduleText);
         CommonMethods.assertEquals(academicsModulePage.sectionsSubmodule.getText(), expectedSectionsSubmoduleText);
+    }
+
+    /**
+     * This method verifies that the following modules are displayed on the navigation page.
+     *
+     * @param expectedStudentInformationText The expected text for the Student Information module.
+     * @param expectedFeesCollectionText     The expected text for the Fees Collection module.
+     * @param expectedIncomeText             The expected text for the Income module.
+     * @param expectedExpensesText           The expected text for the Expenses module.
+     * @param expectedAcademicsText          The expected text for the Academics module.
+     * @param expectedHumanResourceText      The expected text for the Human Resource module.
+     * @param expectedHomeworkText           The expected text for the Homework module.
+     * @param expectedReportsText            The expected text for the Reports module.
+     */
+    public static void the_following_modules_are_displayed(String expectedStudentInformationText, String expectedFeesCollectionText, String expectedIncomeText, String expectedExpensesText, String expectedAcademicsText, String expectedHumanResourceText, String expectedHomeworkText, String expectedReportsText) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(navigationModulesPage.studentInformationModule.getText(), expectedStudentInformationText);
+        CommonMethods.assertEquals(navigationModulesPage.feesCollectionModule.getText(), expectedFeesCollectionText);
+        CommonMethods.assertEquals(navigationModulesPage.incomeModule.getText(), expectedIncomeText);
+        CommonMethods.assertEquals(navigationModulesPage.expensesModule.getText(), expectedExpensesText);
+        CommonMethods.assertEquals(navigationModulesPage.academicsModule.getText(), expectedAcademicsText);
+        CommonMethods.assertEquals(navigationModulesPage.humanResourceModule.getText(), expectedHumanResourceText);
+        CommonMethods.assertEquals(navigationModulesPage.homeworkModule.getText(), expectedHomeworkText);
+        CommonMethods.assertEquals(navigationModulesPage.reportsModule.getText(), expectedReportsText);
     }
 
     /**
@@ -214,7 +249,7 @@ public class StepsImplementation extends PageInitializer {
      *
      * @param savedClass The name of the class to delete.
      */
-    public static void delete_the_class_if_already_existed(String savedClass){
+    public static void delete_the_class_if_already_existed(String savedClass) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Boolean isElementPresent = (Boolean) js.executeScript(
                 "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
@@ -284,7 +319,7 @@ public class StepsImplementation extends PageInitializer {
      */
     public static void user_clicks_on_the_delete_button_for_the_saved_class_and_accepts_alert_the_record_is_deleted(String savedClass) {
         abilityToAddAndDeleteClassesPage.deleteButton(savedClass).click();
-        CommonMethods.assertEquals(CommonMethods.getAlertText(),"Delete Confirm?");
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), "Delete Confirm?");
         CommonMethods.acceptAlert();
         CucumberLogUtils.logScreenShot();
     }
@@ -461,9 +496,9 @@ public class StepsImplementation extends PageInitializer {
     /**
      * This method is used to verify the updated data on the student page.
      *
-     * @param updatedLastNameExp  The expected updated last name of the student.
-     * @param updatedEmailExp     The expected updated email of the student.
-     * @param updatedFathersNameExp  The expected updated father's name of the student.
+     * @param updatedLastNameExp    The expected updated last name of the student.
+     * @param updatedEmailExp       The expected updated email of the student.
+     * @param updatedFathersNameExp The expected updated father's name of the student.
      */
     public static void user_is_on_the_student_page_checks_updated_data(String updatedLastNameExp, String updatedEmailExp, String updatedFathersNameExp) {
         CucumberLogUtils.logScreenShot();
@@ -478,7 +513,7 @@ public class StepsImplementation extends PageInitializer {
      * - Search Expense submodule
      * - Expense Head submodule
      *
-     * @param expectedAddExpenseText   The expected text of the Add Expense submodule
+     * @param expectedAddExpenseText    The expected text of the Add Expense submodule
      * @param expectedSearchExpenseText The expected text of the Search Expense submodule
      * @param expectedExpenseHeadText   The expected text of the Expense Head submodule
      */
@@ -530,15 +565,15 @@ public class StepsImplementation extends PageInitializer {
      * - Department
      * - Designation
      *
-     * @param expectedStaffDirectoryText        The expected label text for the Staff Directory submodule.
-     * @param expectedStaffAttendanceText       The expected label text for the Staff Attendance submodule.
-     * @param expectedPayrollText               The expected label text for the Payroll submodule.
-     * @param expectedApproveLeaveRequestText   The expected label text for the Approve Leave Request submodule.
-     * @param expectedApplyLeaveText            The expected label text for the Apply Leave submodule.
-     * @param expectedLeaveTypeText             The expected label text for the Leave Type submodule.
-     * @param expectedTeachersRatingText        The expected label text for the Teachers Rating submodule.
-     * @param expectedDepartmentText            The expected label text for the Department submodule.
-     * @param expectedDesignationText           The expected label text for the Designation submodule.
+     * @param expectedStaffDirectoryText      The expected label text for the Staff Directory submodule.
+     * @param expectedStaffAttendanceText     The expected label text for the Staff Attendance submodule.
+     * @param expectedPayrollText             The expected label text for the Payroll submodule.
+     * @param expectedApproveLeaveRequestText The expected label text for the Approve Leave Request submodule.
+     * @param expectedApplyLeaveText          The expected label text for the Apply Leave submodule.
+     * @param expectedLeaveTypeText           The expected label text for the Leave Type submodule.
+     * @param expectedTeachersRatingText      The expected label text for the Teachers Rating submodule.
+     * @param expectedDepartmentText          The expected label text for the Department submodule.
+     * @param expectedDesignationText         The expected label text for the Designation submodule.
      */
     public static void the_following_submodules_are_displayed(String expectedStaffDirectoryText, String expectedStaffAttendanceText, String expectedPayrollText, String expectedApproveLeaveRequestText, String expectedApplyLeaveText, String expectedLeaveTypeText, String expectedTeachersRatingText, String expectedDepartmentText, String expectedDesignationText) {
         CucumberLogUtils.logScreenShot();
@@ -742,7 +777,8 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Selects the given admission date on the calendar day.
      *
-     * @param admissionDateText The text representation*/
+     * @param admissionDateText The text representation
+     */
     public static void selects_for_admission_date_calendar_day(String admissionDateText) {
         JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDatePicker, admissionDateText);
         CucumberLogUtils.logScreenShot();
@@ -950,7 +986,7 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Clicks on the search button.
      * This method performs the action of clicking on the search button
-     * */
+     */
     public static void clicks_on_the_search_button() {
         CommonMethods.click(studentAdmissionPage.searchButton);
         CucumberLogUtils.logScreenShot();
@@ -1114,7 +1150,8 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Enters the IFSC code into a text box.
      *
-     * @param ifscCodeText the IF*/
+     * @param ifscCodeText the IF
+     */
     public static void enters_ifsc_code(String ifscCodeText) {
         CommonMethods.sendKeys(verifyingStudentDataPage.ifscCodeBox, ifscCodeText);
         CucumberLogUtils.logScreenShot();
@@ -1276,16 +1313,16 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Verifies if all student data submitted with the record is displayed on the webpage.
      *
-     * @param expectedUniqNumberText     The expected unique number text.
-     * @param expectedNameText           The expected name text.
-     * @param expectedClassText          The expected class text.
-     * @param expectedFathersNameText    The expected father's name text.
-     * @param expectedDateOfBirthText    The expected date of birth text.
-     * @param expectedGenderText         The expected gender text.
-     * @param expectedCategoryText       The expected category text.
-     * @param expectedPhoneNumberText    The expected phone number text.
-     * @param expectedHeightText         The expected height text.
-     * @param expectedWeightText         The expected weight text.
+     * @param expectedUniqNumberText  The expected unique number text.
+     * @param expectedNameText        The expected name text.
+     * @param expectedClassText       The expected class text.
+     * @param expectedFathersNameText The expected father's name text.
+     * @param expectedDateOfBirthText The expected date of birth text.
+     * @param expectedGenderText      The expected gender text.
+     * @param expectedCategoryText    The expected category text.
+     * @param expectedPhoneNumberText The expected phone number text.
+     * @param expectedHeightText      The expected height text.
+     * @param expectedWeightText      The expected weight text.
      * @throws AssertionError if any of the expected texts is not found on the webpage.
      */
     public static void all_student_data_submitted_with_the_record_should_display(String expectedUniqNumberText, String expectedNameText, String expectedClassText, String expectedFathersNameText, String expectedDateOfBirthText, String expectedGenderText, String expectedCategoryText, String expectedPhoneNumberText, String expectedHeightText, String expectedWeightText) {
