@@ -10,7 +10,7 @@ import static com.chromatech.utils.WebDriverUtils.driver;
 public class StudentAdmissionPage {
 
     public StudentAdmissionPage() {
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
     /* STUDENT INFORMATION MODULE */
@@ -150,13 +150,19 @@ public class StudentAdmissionPage {
     public WebElement deleteButton;
 
     /**
-     * Finds and returns the WebElement of the dynamic delete record locator based on the provided text.
+     * Find and return a WebElement using a dynamic locator based on the given text.
      *
-     * @param text the text to be searched for in the record locator
-     * @return the WebElement that represents the delete record locator
+     * @param text the text to be matched with the element text using contains()
+     * @return the WebElement matching the dynamic locator
      */
     public static WebElement dynamicLocator(String text) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]//parent::tr/td/input"));
+    }
+
+    public WebElement findElementInTable(String text) {
+        String dynamicXpath = "//*[contains(text(),'" + text + "')]//parent::tr/td";
+        WebElement element = driver.findElement(By.xpath(dynamicXpath));
+        return element;
     }
 
     /**

@@ -9,7 +9,7 @@ Feature: Adding Expenses Scenario
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Expenses module
     And clicks on Add Expense sub module
-    And selects "Hello" for expense head drop down
+    And selects "Alfredo" for expense head drop down
     And enters name "Mary"
     And enters invoice number "54321"
     And selects "07/01/2024" for Date Calendar Day
@@ -17,5 +17,5 @@ Feature: Adding Expenses Scenario
     And attach file
     And enters description "Tuition payment"
     And user saves application
-    Then the expense displays as expected  "Mary", "54321", "07/01/2024", "Hello",  "$1500.00"
+    Then the expense displays as expected  "Mary", "54321", "07/01/2024", "Alfredo",  "$1500.00"
     And the expense can then be removed

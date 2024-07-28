@@ -24,8 +24,14 @@ public class PageInitializer {
     public static StudentInformationModulePage studentInformationModulePage;
     public static VerifyingStudentDataPage verifyingStudentDataPage;
     public static ExpensesModulePage expensesModule;
+    public static ClassAndSectionsPage classAndSectionsPage;
+    public static AbilityToAddAndDeleteSectionsPage abilityToAddAndDeleteSectionsPage;
+    public static AbilityToDisableAndEnableStudentRecordPage abilityToDisableAndEnableStudentRecordPage;
 
     public static void initializeAllPages() {
+        abilityToDisableAndEnableStudentRecordPage = new AbilityToDisableAndEnableStudentRecordPage();
+        abilityToAddAndDeleteSectionsPage = new AbilityToAddAndDeleteSectionsPage();
+        classAndSectionsPage = new ClassAndSectionsPage();
         homeworkModulePage = new HomeworkModulePage();
         incomeModulePage = new IncomeModulePage();
         loginPage = new LoginPage();
