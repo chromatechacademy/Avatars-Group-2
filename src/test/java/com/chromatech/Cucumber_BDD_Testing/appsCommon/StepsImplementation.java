@@ -6,6 +6,7 @@ import com.chromatech.utils.JavascriptMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import java.util.ArrayList;
 import java.util.List;
 import static com.chromatech.Cucumber_BDD_Testing.appsCommon.Constants.*;
@@ -170,14 +171,14 @@ public class StepsImplementation extends PageInitializer {
     /**
      * This method verifies that the following submodules are displayed on the academics module page.
      *
-     * @param expectedClassTimetableSubmoduleText   The expected text for the Class Timetable submodule.
-     * @param expectedTeacherTimetableSubmoduleText The expected text for the Teacher Timetable submodule.
+     * @param expectedClassTimetableSubmoduleText     The expected text for the Class Timetable submodule.
+     * @param expectedTeacherTimetableSubmoduleText   The expected text for the Teacher Timetable submodule.
      * @param expectedAssignClassTeacherSubmoduleText The expected text for the Assign Class Teacher submodule.
-     * @param expectedPromoteStudentSubmoduleText The expected text for the Promote Student submodule.
-     * @param expectedSubjectGroupSubmoduleText The expected text for the Subject Group submodule.
-     * @param expectedSubjectsSubmoduleText The expected text for the Subjects submodule.
-     * @param expectedClassSubmoduleText The expected text for the Class submodule.
-     * @param expectedSectionsSubmoduleText The expected text for the Sections submodule.
+     * @param expectedPromoteStudentSubmoduleText     The expected text for the Promote Student submodule.
+     * @param expectedSubjectGroupSubmoduleText       The expected text for the Subject Group submodule.
+     * @param expectedSubjectsSubmoduleText           The expected text for the Subjects submodule.
+     * @param expectedClassSubmoduleText              The expected text for the Class submodule.
+     * @param expectedSectionsSubmoduleText           The expected text for the Sections submodule.
      */
     public static void the_following_submodules_are_displayed(String expectedClassTimetableSubmoduleText, String expectedTeacherTimetableSubmoduleText, String expectedAssignClassTeacherSubmoduleText, String expectedPromoteStudentSubmoduleText, String expectedSubjectGroupSubmoduleText, String expectedSubjectsSubmoduleText, String expectedClassSubmoduleText, String expectedSectionsSubmoduleText) {
         CucumberLogUtils.logScreenShot();
@@ -214,7 +215,7 @@ public class StepsImplementation extends PageInitializer {
      *
      * @param savedClass The name of the class to delete.
      */
-    public static void delete_the_class_if_already_existed(String savedClass){
+    public static void delete_the_class_if_already_existed(String savedClass) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Boolean isElementPresent = (Boolean) js.executeScript(
                 "return document.evaluate(arguments[0], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue !== null;",
@@ -284,7 +285,7 @@ public class StepsImplementation extends PageInitializer {
      */
     public static void user_clicks_on_the_delete_button_for_the_saved_class_and_accepts_alert_the_record_is_deleted(String savedClass) {
         abilityToAddAndDeleteClassesPage.deleteButton(savedClass).click();
-        CommonMethods.assertEquals(CommonMethods.getAlertText(),"Delete Confirm?");
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), "Delete Confirm?");
         CommonMethods.acceptAlert();
         CucumberLogUtils.logScreenShot();
     }
@@ -446,6 +447,7 @@ public class StepsImplementation extends PageInitializer {
      * It calls the click method on the edit button element of the editStudentRecordPage to perform the click action.
      */
     public static void user_clicks_on_edit_btn() {
+       CommonMethods.waitForClickability(editStudentRecordPage.editButton);
         editStudentRecordPage.editButton.click();
         CucumberLogUtils.logScreenShot();
     }
@@ -454,6 +456,7 @@ public class StepsImplementation extends PageInitializer {
      * This method simulates a user clicking on the show button.
      */
     public static void user_clicks_on_show_btn() {
+        CommonMethods.waitForClickability(editStudentRecordPage.showButton);
         editStudentRecordPage.showButton.click();
         CucumberLogUtils.logScreenShot();
     }
@@ -461,9 +464,9 @@ public class StepsImplementation extends PageInitializer {
     /**
      * This method is used to verify the updated data on the student page.
      *
-     * @param updatedLastNameExp  The expected updated last name of the student.
-     * @param updatedEmailExp     The expected updated email of the student.
-     * @param updatedFathersNameExp  The expected updated father's name of the student.
+     * @param updatedLastNameExp    The expected updated last name of the student.
+     * @param updatedEmailExp       The expected updated email of the student.
+     * @param updatedFathersNameExp The expected updated father's name of the student.
      */
     public static void user_is_on_the_student_page_checks_updated_data(String updatedLastNameExp, String updatedEmailExp, String updatedFathersNameExp) {
         CucumberLogUtils.logScreenShot();
@@ -478,7 +481,7 @@ public class StepsImplementation extends PageInitializer {
      * - Search Expense submodule
      * - Expense Head submodule
      *
-     * @param expectedAddExpenseText   The expected text of the Add Expense submodule
+     * @param expectedAddExpenseText    The expected text of the Add Expense submodule
      * @param expectedSearchExpenseText The expected text of the Search Expense submodule
      * @param expectedExpenseHeadText   The expected text of the Expense Head submodule
      */
@@ -530,15 +533,15 @@ public class StepsImplementation extends PageInitializer {
      * - Department
      * - Designation
      *
-     * @param expectedStaffDirectoryText        The expected label text for the Staff Directory submodule.
-     * @param expectedStaffAttendanceText       The expected label text for the Staff Attendance submodule.
-     * @param expectedPayrollText               The expected label text for the Payroll submodule.
-     * @param expectedApproveLeaveRequestText   The expected label text for the Approve Leave Request submodule.
-     * @param expectedApplyLeaveText            The expected label text for the Apply Leave submodule.
-     * @param expectedLeaveTypeText             The expected label text for the Leave Type submodule.
-     * @param expectedTeachersRatingText        The expected label text for the Teachers Rating submodule.
-     * @param expectedDepartmentText            The expected label text for the Department submodule.
-     * @param expectedDesignationText           The expected label text for the Designation submodule.
+     * @param expectedStaffDirectoryText      The expected label text for the Staff Directory submodule.
+     * @param expectedStaffAttendanceText     The expected label text for the Staff Attendance submodule.
+     * @param expectedPayrollText             The expected label text for the Payroll submodule.
+     * @param expectedApproveLeaveRequestText The expected label text for the Approve Leave Request submodule.
+     * @param expectedApplyLeaveText          The expected label text for the Apply Leave submodule.
+     * @param expectedLeaveTypeText           The expected label text for the Leave Type submodule.
+     * @param expectedTeachersRatingText      The expected label text for the Teachers Rating submodule.
+     * @param expectedDepartmentText          The expected label text for the Department submodule.
+     * @param expectedDesignationText         The expected label text for the Designation submodule.
      */
     public static void the_following_submodules_are_displayed(String expectedStaffDirectoryText, String expectedStaffAttendanceText, String expectedPayrollText, String expectedApproveLeaveRequestText, String expectedApplyLeaveText, String expectedLeaveTypeText, String expectedTeachersRatingText, String expectedDepartmentText, String expectedDesignationText) {
         CucumberLogUtils.logScreenShot();
@@ -633,7 +636,6 @@ public class StepsImplementation extends PageInitializer {
      * It waits for the student admission submodule to be clickable.
      */
     public static void clicks_on_student_admission_sub_module() {
-        CommonMethods.sleep(3000);
         CommonMethods.waitForClickability(studentAdmissionPage.studentAdmissionSubModule);
         CommonMethods.click(studentAdmissionPage.studentAdmissionSubModule);
         CucumberLogUtils.logScreenShot();
@@ -742,7 +744,8 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Selects the given admission date on the calendar day.
      *
-     * @param admissionDateText The text representation*/
+     * @param admissionDateText The text representation
+     */
     public static void selects_for_admission_date_calendar_day(String admissionDateText) {
         JavascriptMethods.selectDateByJS(studentAdmissionPage.admissionDatePicker, admissionDateText);
         CucumberLogUtils.logScreenShot();
@@ -923,6 +926,7 @@ public class StepsImplementation extends PageInitializer {
      * After successfully clicking on the submodule, it logs a screenshot.
      */
     public static void user_clicks_on_the_bulk_delete_submodule() {
+        CommonMethods.waitForClickability(studentAdmissionPage.bulkDeleteSubModule);
         CommonMethods.click(studentAdmissionPage.bulkDeleteSubModule);
         CucumberLogUtils.logScreenShot();
     }
@@ -933,6 +937,7 @@ public class StepsImplementation extends PageInitializer {
      * @param sdetText the text of the option to be selected
      */
     public static void selects_for_the_class_drop_down(String sdetText) {
+        CommonMethods.waitForVisibility(studentAdmissionPage.classDropDownBox);
         CommonMethods.selectDropDownValue(sdetText, studentAdmissionPage.classDropDownBox);
         CucumberLogUtils.logScreenShot();
     }
@@ -950,7 +955,7 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Clicks on the search button.
      * This method performs the action of clicking on the search button
-     * */
+     */
     public static void clicks_on_the_search_button() {
         CommonMethods.click(studentAdmissionPage.searchButton);
         CucumberLogUtils.logScreenShot();
@@ -1114,7 +1119,8 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Enters the IFSC code into a text box.
      *
-     * @param ifscCodeText the IF*/
+     * @param ifscCodeText the IF
+     */
     public static void enters_ifsc_code(String ifscCodeText) {
         CommonMethods.sendKeys(verifyingStudentDataPage.ifscCodeBox, ifscCodeText);
         CucumberLogUtils.logScreenShot();
@@ -1276,16 +1282,16 @@ public class StepsImplementation extends PageInitializer {
     /**
      * Verifies if all student data submitted with the record is displayed on the webpage.
      *
-     * @param expectedUniqNumberText     The expected unique number text.
-     * @param expectedNameText           The expected name text.
-     * @param expectedClassText          The expected class text.
-     * @param expectedFathersNameText    The expected father's name text.
-     * @param expectedDateOfBirthText    The expected date of birth text.
-     * @param expectedGenderText         The expected gender text.
-     * @param expectedCategoryText       The expected category text.
-     * @param expectedPhoneNumberText    The expected phone number text.
-     * @param expectedHeightText         The expected height text.
-     * @param expectedWeightText         The expected weight text.
+     * @param expectedUniqNumberText  The expected unique number text.
+     * @param expectedNameText        The expected name text.
+     * @param expectedClassText       The expected class text.
+     * @param expectedFathersNameText The expected father's name text.
+     * @param expectedDateOfBirthText The expected date of birth text.
+     * @param expectedGenderText      The expected gender text.
+     * @param expectedCategoryText    The expected category text.
+     * @param expectedPhoneNumberText The expected phone number text.
+     * @param expectedHeightText      The expected height text.
+     * @param expectedWeightText      The expected weight text.
      * @throws AssertionError if any of the expected texts is not found on the webpage.
      */
     public static void all_student_data_submitted_with_the_record_should_display(String expectedUniqNumberText, String expectedNameText, String expectedClassText, String expectedFathersNameText, String expectedDateOfBirthText, String expectedGenderText, String expectedCategoryText, String expectedPhoneNumberText, String expectedHeightText, String expectedWeightText) {
@@ -1313,6 +1319,383 @@ public class StepsImplementation extends PageInitializer {
                 throw new AssertionError("Expected text: " + expectedText + " not found on the webpage.");
             }
         }
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Performs a click action on the class submodule element.
+     * After the click action is performed, a screenshot is taken and logged.
+     */
+    public static void user_clicks_on_class_submodule() {
+        CommonMethods.click(classAndSectionsPage.classSubModule);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Adds a class to the cyber security page.
+     *
+     * @param cyberSecurityClassText the text of the class to add
+     */
+    public static void adds_a_class(String cyberSecurityClassText) {
+        CommonMethods.sendKeys(classAndSectionsPage.cyberSecurityClass, cyberSecurityClassText);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * This method performs the action of clicking on the checkboxes for the following topics:
+     * - Networking Fundamentals
+     * - Linux Fundamentals
+     * - CIA Triad
+     * - Penetration Testing and Ethical Hacking
+     * <p>
+     * It retrieves the corresponding checkboxes from the Class and Sections page and
+     * performs a click action on each checkbox using the CommonMethods.click() method.
+     * After clicking on the checkboxes, it logs a screenshot using the CucumberLogUtils.logScreenShot() method.
+     */
+    public static void clicks_on_networking_fundamentals_linux_fundamentals_cia_triad_penetration_testing_ethical_hacking() {
+        ArrayList<WebElement> checkboxes = new ArrayList<>();
+        checkboxes.add(classAndSectionsPage.networkingFundamentalsCheckbox);
+        checkboxes.add(classAndSectionsPage.linuxFundamentalsCheckbox);
+        checkboxes.add(classAndSectionsPage.ciaTriadCheckbox);
+        checkboxes.add(classAndSectionsPage.penetrationTestingEthicalHackingCheckbox);
+        for (WebElement checkbox : checkboxes) {
+            CommonMethods.click(checkbox);
+        }
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Clicks on a save button.
+     * <p>
+     * This method performs a click action on a save button and logs a screenshot.
+     */
+    public static void clicks_on_a_save_button() {
+        CommonMethods.click(classAndSectionsPage.saveButton);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Checks if the class is successfully saved.
+     *
+     * @param expectedAlertSaveText The expected alert save text.
+     */
+    public static void the_class_is_successfully_saved(String expectedAlertSaveText) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.assertEquals(classAndSectionsPage.actualAlertSaveText.getText(), expectedAlertSaveText);
+    }
+
+    /**
+     *
+     */
+    public static void clicks_on_testing_fundamentals_sdlc_methodologies_selenium_test_automation_cucumber_fundamentals_api_testing_git_git_hub_java_for_cool_people_mobile_test_automation_accessibility_testing_database_testing() {
+        ArrayList<WebElement> checkBoxes = new ArrayList<>();
+        for (int i = 3; i <= 12; i++) {
+            List<WebElement> checkbox = driver.findElements(By.xpath("((//*[contains(text(),'Sections')])[2]/following-sibling::div/label/input)[" + i + "]"));
+            checkBoxes.addAll(checkbox);
+        }
+        for (WebElement cb : checkBoxes) {
+            CommonMethods.click(cb);
+        }
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Check if the following sections for the SDET class are displayed correctly.
+     *
+     * @param expectedDatabaseTestingText        the expected text for the Database Testing section
+     * @param expectedTestingFundamentalsText    the expected text for the Testing Fundamentals section
+     * @param expectedSDLCMethodologiesText      the expected text for the SDLC Methodologies section
+     * @param expectedSeleniumTestAutomationText the expected text for the Selenium Test Automation section
+     * @param expectedCucumberFundamentalsText   the expected text for the Cucumber Fundamentals section
+     * @param expectedAPITestingText             the expected text for the API Testing section
+     * @param expectedGitGitHubText              the expected text for the Git/GitHub section
+     * @param expectedJavaForCoolPeopleText      the expected text for the Java for Cool People section
+     * @param expectedMobileTestAutomationText   the expected text for the Mobile Test Automation section
+     * @param expectedAccessibilityTestingText   the expected text for the Accessibility Testing section
+     */
+    public static void the_following_sections_for_class_sdet_is_displayed(String expectedDatabaseTestingText, String expectedTestingFundamentalsText, String expectedSDLCMethodologiesText, String expectedSeleniumTestAutomationText, String expectedCucumberFundamentalsText, String expectedAPITestingText, String expectedGitGitHubText, String expectedJavaForCoolPeopleText, String expectedMobileTestAutomationText, String expectedAccessibilityTestingText) {
+        CucumberLogUtils.logScreenShot();
+        ArrayList<String> expectedText = new ArrayList<>();
+        expectedText.add(expectedDatabaseTestingText);
+        expectedText.add(expectedTestingFundamentalsText);
+        expectedText.add(expectedSDLCMethodologiesText);
+        expectedText.add(expectedSeleniumTestAutomationText);
+        expectedText.add(expectedCucumberFundamentalsText);
+        expectedText.add(expectedAPITestingText);
+        expectedText.add(expectedGitGitHubText);
+        expectedText.add(expectedJavaForCoolPeopleText);
+        expectedText.add(expectedMobileTestAutomationText);
+        expectedText.add(expectedAccessibilityTestingText);
+        ArrayList<String> actualText = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            WebElement pathActualTexts = driver.findElement(By.xpath("(//*[contains(text(),'SDET')]/following-sibling::td/div)[" + i + "]"));
+            actualText.add(pathActualTexts.getText());
+        }
+        Assert.assertEquals(actualText, expectedText);
+        Assert.assertEquals(actualText.size(), expectedText.size());
+    }
+
+    /**
+     * This method verifies that the following sections for class Cyber Security are displayed.
+     *
+     * @param expectedPenetrationTestingEthicalHackingText the expected text for Penetration Testing and Ethical Hacking section
+     * @param expectedNetworkingFundamentalsText           the expected text for Networking Fundamentals section
+     * @param expectedLinuxFundamentalsText                the expected text for Linux Fundamentals section
+     * @param expectedCiaTriadText                         the expected text for CIA Triad section
+     */
+    public static void the_following_sections_for_class_cyber_security_is_displayed(String expectedPenetrationTestingEthicalHackingText, String expectedNetworkingFundamentalsText, String expectedLinuxFundamentalsText, String expectedCiaTriadText) {
+        CucumberLogUtils.logScreenShot();
+        ArrayList<String> expectedText = new ArrayList<>();
+        expectedText.add(expectedPenetrationTestingEthicalHackingText);
+        expectedText.add(expectedNetworkingFundamentalsText);
+        expectedText.add(expectedLinuxFundamentalsText);
+        expectedText.add(expectedCiaTriadText);
+        ArrayList<String> actualText = new ArrayList<>();
+        for (int i = 1; i <= 4; i++) {
+            WebElement pathActualTexts = driver.findElement(By.xpath("(//*[contains(text(),'Cyber Security')]/following-sibling::td/div)[" + i + "]"));
+            actualText.add(pathActualTexts.getText());
+        }
+        Assert.assertEquals(actualText, expectedText);
+        Assert.assertEquals(actualText.size(), expectedText.size());
+    }
+
+    /**
+     * Deletes the class.
+     *
+     * @param sdetClassText the text of the class to be deleted
+     */
+    public static void deletes_the_class(String sdetClassText) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.click(classAndSectionsPage.findElementInTableDelete(sdetClassText));
+    }
+
+    /**
+     * Accepts an alert with the expected alert text.
+     *
+     * @param expectedAlertText the expected text of the alert
+     */
+    public static void accepting_alert(String expectedAlertText) {
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+        CommonMethods.acceptAlert();
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Deletes a class using the provided CyberClass text.
+     *
+     * @param cyberClassText the text of the CyberClass to delete
+     */
+    public static void deletes_class_the(String cyberClassText) {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.click(classAndSectionsPage.findElementInTableDelete(cyberClassText));
+    }
+
+    /**
+     * Performs the action if the class exists. User clicks on the delete button and accepts the alert.
+     *
+     * @param cyberSecurityText The text to be searched in the table column.
+     */
+    public static void if_the_class_exists_user_clicks_on_the_delete_button_and_accepting_alert(String cyberSecurityText) {
+        List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
+        for (WebElement row : rows) {
+            List<WebElement> cols = row.findElements(By.tagName("td"));
+            for (WebElement col : cols) {
+                if (col.getText().equals(cyberSecurityText)) {
+                    CucumberLogUtils.logScreenShot();
+                    JavascriptMethods.scrollIntoView(classAndSectionsPage.findElementInTableDelete(cyberSecurityText));
+                    CommonMethods.click(classAndSectionsPage.findElementInTableDelete(cyberSecurityText));
+                    CommonMethods.acceptAlert();
+                    return;
+                }
+            }
+        }
+        CucumberLogUtils.logScreenShot();
+        System.out.println("Record number " + cyberSecurityText + " does not exist");
+    }
+
+    /**
+     * Searches for the specified text in a table, clicks on the delete button if found, and accepts the alert.
+     *
+     * @param sdetSecurityText The text to search for in the table.
+     */
+    public static void if_the_class_is_exists_user_clicks_on_the_delete_button_and_accepting_alert(String sdetSecurityText) {
+        List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
+        for (WebElement row : rows) {
+            List<WebElement> cols = row.findElements(By.tagName("td"));
+            for (WebElement col : cols) {
+                if (col.getText().equals(sdetSecurityText)) {
+                    CucumberLogUtils.logScreenShot();
+                    JavascriptMethods.scrollIntoView(classAndSectionsPage.findElementInTableDelete(sdetSecurityText));
+                    CommonMethods.click(classAndSectionsPage.findElementInTableDelete(sdetSecurityText));
+                    CommonMethods.acceptAlert();
+                    return;
+                }
+            }
+        }
+        CucumberLogUtils.logScreenShot();
+        System.out.println("Record number " + sdetSecurityText + " does not exist");
+    }
+
+    /**
+     * Performs a click action on the "Academics" module.
+     * <p>
+     * This method clicks on the "Academics" module using the {@link CommonMethods#click(WebElement)}
+     * method. It also logs a screenshot of the page after the click action is performed.
+     * </p>
+     */
+    public static void user_click_on_academics_module() {
+        CommonMethods.click(abilityToAddAndDeleteSectionsPage.academicsModule);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * This method is used to simulate user's click on the sections submodule.
+     * It calls the `click` method from the `CommonMethods` class to click on the sections submodule.
+     * After clicking, it logs a screenshot using the `CucumberLogUtils` class.
+     */
+    public static void user_clicks_on_sections_submodule() {
+        CommonMethods.click(abilityToAddAndDeleteSectionsPage.sectionsSubmodule);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Adds a new section with the given name text.
+     *
+     * @param newSectionNameText the name of the new section to be added
+     */
+    public static void adds_a_section(String newSectionNameText) {
+        CommonMethods.sendKeys(abilityToAddAndDeleteSectionsPage.sectionNameTextBox, newSectionNameText);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Clicks on the save button.
+     * The method is used to simulate a user clicking on the save button on a page.
+     * After clicking the save button, a screenshot is taken.
+     */
+    public static void clicks_on_the_save_button() {
+        CommonMethods.click(abilityToAddAndDeleteSectionsPage.saveButton);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Verifies if the section is successfully saved by comparing the actual alert save text with the expected alert save text.
+     * Logs a screenshot of the screen.
+     *
+     * @param expectedAlertSaveText The expected alert save text as a String.
+     */
+    public static void section_is_successfully_saved(String expectedAlertSaveText) {
+        CommonMethods.assertEquals(abilityToAddAndDeleteSectionsPage.actualAlertSaveText.getText(), expectedAlertSaveText);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * This method is used to simulate a user deleting a section.
+     *
+     * @param sectionNameDelete The name of the section to be deleted.
+     */
+    public static void user_is_deleting_the_section(String sectionNameDelete) {
+        JavascriptMethods.scrollIntoView(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDelete));
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.click(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDelete));
+    }
+
+    /**
+     * Accepts the alert with the specified expected alert text.
+     *
+     * @param expectedAlertText the expected text of the alert to be accepted
+     */
+    public static void accept_alert(String expectedAlertText) {
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+        CommonMethods.acceptAlert();
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * This method checks if the section exists, clicks on the delete button, and accepts the alert.
+     *
+     * @param sectionNameDeleteText The name of the section to be deleted.
+     */
+    public static void if_the_section_exists_user_clicks_on_the_delete_button_and_accepting_alert(String sectionNameDeleteText) {
+        List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
+        for (WebElement row : rows) {
+            List<WebElement> cols = row.findElements(By.tagName("td"));
+            for (WebElement col : cols) {
+                if (col.getText().equals(sectionNameDeleteText)) {
+                    CucumberLogUtils.logScreenShot();
+                    JavascriptMethods.scrollIntoView(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText));
+                    CommonMethods.click(abilityToAddAndDeleteSectionsPage.dynamicLocatorDelete(sectionNameDeleteText));
+                    CommonMethods.acceptAlert();
+                    return;
+                }
+            }
+        }
+        CucumberLogUtils.logScreenShot();
+        System.out.println("Record number " + sectionNameDeleteText + " does not exist");
+    }
+
+    /**
+     * This method simulates a user clicking on a disable button and accepting the alert that appears.
+     *
+     * @param expectedAlertText The expected text of the alert that will appear.
+     */
+    public static void user_clicks_on_disable_button_and_accepting_alert(String expectedAlertText) {
+        CucumberLogUtils.logScreenShot();
+        abilityToDisableAndEnableStudentRecordPage.disableButton.click();
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * This method selects the option from the reason drop-down list.
+     *
+     * @param reasonText The text of the reason option to be selected from the drop-down list.
+     */
+    public static void selects_for_reason_drop_down(String reasonText) {
+        CommonMethods.sleep(3000);
+        CommonMethods.waitForVisibility(abilityToDisableAndEnableStudentRecordPage.reasonDropDown);
+        CommonMethods.selectDropDownValue(reasonText, abilityToDisableAndEnableStudentRecordPage.reasonDropDown);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Logs a screenshot and clicks on the save button.
+     */
+    public static void user_clicks_on_save_button() {
+        CucumberLogUtils.logScreenShot();
+        abilityToDisableAndEnableStudentRecordPage.saveButton.click();
+    }
+
+    /**
+     * This method simulates a user clicking on the disabled students sub-module in a software system.
+     * It performs the following actions:
+     * 1. Logs a screenshot of the current screen using CucumberLogUtils.logScreenShot().
+     * 2. Pauses the execution for 3000 milliseconds using CommonMethods.sleep(3000).
+     * 3. Waits for the disabled students sub-module element to be clickable using CommonMethods.waitForClickability().
+     * 4. Clicks on the disabled students sub-module element.
+     *
+     * @since 1.0
+     */
+    public static void user_clicks_on_disabled_students_sub_module() {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.sleep(3000);
+        CommonMethods.waitForClickability(abilityToDisableAndEnableStudentRecordPage.disabledStudentsSubmodule);
+        abilityToDisableAndEnableStudentRecordPage.disabledStudentsSubmodule.click();
+    }
+
+    /**
+     * This method performs the following steps:
+     * 1. Clicks on the enable button.
+     * 2. Verifies that the displayed alert text is as expected.
+     * 3. Accepts the alert.
+     * 4. Logs a screen shot.
+     *
+     * @param expectedAlertText the expected alert text to be displayed
+     */
+    public static void user_clicks_on_enable_button_and_accepting_alert(String expectedAlertText) {
+        abilityToDisableAndEnableStudentRecordPage.enableButton.click();
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+        CommonMethods.acceptAlert();
         CucumberLogUtils.logScreenShot();
     }
 }
