@@ -57,18 +57,4 @@ public class ClassAndSectionsPage {
         WebElement element = driver.findElement(By.xpath(dynamicXpath));
         return element;
     }
-
-
-
-
-// DELETE BUTTON //*[contains(text(),'Cyber Security')]/following-sibling::td/following-sibling::td/a/following-sibling::a/i
-
-//DELETE BUTTON //*[contains(text(),'SDET')]/following-sibling::td/following-sibling::td/a/following-sibling::a/i
-
-//Cyber Security
-//  (//*[contains(text(),'Cyber Security')]/following-sibling::td/div)[1]
-
-
-//SDET
-// (//*[contains(text(),'SDET')]/following-sibling::td/div)[1]
 }

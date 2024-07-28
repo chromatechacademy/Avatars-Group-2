@@ -1,6 +1,6 @@
 Feature: Class And Sections Scenario
 
-  @Progression @AG2CP-11 @ira
+  @Regression @AG2CP-11 @ira
   Scenario: Class And Sections Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
@@ -22,9 +22,9 @@ Feature: Class And Sections Scenario
     Then the following sections for class SDET is displayed "Database Testing", "Testing Fundamentals", "SDLC Methodologies", "Selenium Test Automation", "Cucumber Fundamentals", "API Testing", "Git/GitHub", "Java 11 for Cool People", "Mobile Test Automation", "Accessibility Testing"
     Then the following sections for class Cyber Security is displayed "Penetration Testing/Ethical Hacking", "Networking Fundamentals", "Linux Fundamentals", "CIA Triad"
     And deletes the "SDET" class
-    And accepts Alert "Delete Confirm?"
+    And accepting Alert "Delete Confirm?"
     And deletes class the "Cyber Security"
-    And accepts Alert "Delete Confirm?"
+    And accepting Alert "Delete Confirm?"
     And adds a class "Cyber Security"
     And clicks on Networking Fundamentals, Linux Fundamentals, CIA Triad, Penetration TestingEthical Hacking
     And clicks on a Save button

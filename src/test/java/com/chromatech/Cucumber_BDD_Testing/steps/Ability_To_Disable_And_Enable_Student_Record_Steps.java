@@ -20,8 +20,10 @@ public class Ability_To_Disable_And_Enable_Student_Record_Steps {
 
     @When("selects {string} for Reason drop down")
     public void selects_for_reason_drop_down(String reasonText) {
+        CommonMethods.sleep(5000);
         CommonMethods.selectDropDownValue(reasonText, abilityToDisableAndEnableStudentRecordPage.reasonDropDown);
         CucumberLogUtils.logScreenShot();
+
     }
 
     @When("user clicks on Save button")
@@ -33,6 +35,7 @@ public class Ability_To_Disable_And_Enable_Student_Record_Steps {
     @Then("user clicks on Disabled Students sub module")
     public void user_clicks_on_disabled_students_sub_module() {
         CucumberLogUtils.logScreenShot();
+        CommonMethods.sleep(5000);
         abilityToDisableAndEnableStudentRecordPage.disabledStudentsSubmodule.click();
     }
 

@@ -1,8 +1,5 @@
 package com.chromatech.Cucumber_BDD_Testing.appsCommon;
 
-import com.chromatech.Cucumber_BDD_Testing.pages.HomeworkModulePage;
-import com.chromatech.Cucumber_BDD_Testing.pages.IncomeModulePage;
-import com.chromatech.Cucumber_BDD_Testing.pages.LoginPage;
 import com.chromatech.Cucumber_BDD_Testing.pages.*;
 
 public class PageInitializer {
@@ -27,8 +24,12 @@ public class PageInitializer {
     public static StudentInformationModulePage studentInformationModulePage;
     public static VerifyingStudentDataPage verifyingStudentDataPage;
     public static ExpensesModulePage expensesModule;
+    public static ClassAndSectionsPage classAndSectionsPage;
+    public static AbilityToAddAndDeleteSectionsPage abilityToAddAndDeleteSectionsPage;
 
     public static void initializeAllPages() {
+        abilityToAddAndDeleteSectionsPage = new AbilityToAddAndDeleteSectionsPage();
+        classAndSectionsPage = new ClassAndSectionsPage();
         homeworkModulePage = new HomeworkModulePage();
         incomeModulePage = new IncomeModulePage();
         loginPage = new LoginPage();

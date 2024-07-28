@@ -8,8 +8,16 @@ Feature: Ability to edit student records
     And clicks on Sign In button
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When user clicks on Student Information module
+    And user clicks on the Bulk Delete submodule
+    And selects "SDET" for the class drop-down
+    And selects "Cucumber Fundamentals" for the section drop-down
+    And clicks on the Search button
+    When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
+    And if the record admission number "111" exists user clicks on the checkbox
+    And if the unique admission number exists clicks the Delete button and accepting alert "Are you sure you want to delete this?"
     And clicks on Student Admission sub module
-    And enters Unique Admission Number "2589"
+    And enters Unique Admission Number "222"
+    And enters Roll Number "12331"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
     And enters first name "Stanislav"
@@ -30,7 +38,7 @@ Feature: Ability to edit student records
     And enters guardian address "1067 Madison Ave, New York, NY 10028"
     And saves submission
     Then user clicks on the Student Details submodule
-    And user enters unique admission number "2589" in Search by Keyword text box
+    And user enters unique admission number "222" in Search by Keyword text box
     And user clicks on the Search button
     And user clicks on edit btn
     And enters last name "Gamon"
@@ -38,7 +46,7 @@ Feature: Ability to edit student records
     And enters father name "Carlos"
     And saves submission
     Then user clicks on the Student Details submodule
-    And user enters unique admission number "2589" in Search by Keyword text box
+    And user enters unique admission number "222" in Search by Keyword text box
     And user clicks on the Search button
     And user clicks on show btn
     And user is on the Student page checks updated data "Stanislav Gamon", "stanislav.gomon@gmail.com", "Carlos"
@@ -47,5 +55,5 @@ Feature: Ability to edit student records
     And selects "Cucumber Fundamentals" for the section drop-down
     And clicks on the Search button
     When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
-    And clicks on the checkbox with the unique admission number "2589"
+    And clicks on the checkbox with the unique admission number "222"
     And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
