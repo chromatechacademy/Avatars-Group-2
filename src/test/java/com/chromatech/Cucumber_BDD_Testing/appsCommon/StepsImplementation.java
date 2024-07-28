@@ -937,6 +937,7 @@ public class StepsImplementation extends PageInitializer {
      * @param sdetText the text of the option to be selected
      */
     public static void selects_for_the_class_drop_down(String sdetText) {
+        CommonMethods.waitForVisibility(studentAdmissionPage.classDropDownBox);
         CommonMethods.selectDropDownValue(sdetText, studentAdmissionPage.classDropDownBox);
         CucumberLogUtils.logScreenShot();
     }
@@ -1631,5 +1632,70 @@ public class StepsImplementation extends PageInitializer {
         }
         CucumberLogUtils.logScreenShot();
         System.out.println("Record number " + sectionNameDeleteText + " does not exist");
+    }
+
+    /**
+     * This method simulates a user clicking on a disable button and accepting the alert that appears.
+     *
+     * @param expectedAlertText The expected text of the alert that will appear.
+     */
+    public static void user_clicks_on_disable_button_and_accepting_alert(String expectedAlertText) {
+        CucumberLogUtils.logScreenShot();
+        abilityToDisableAndEnableStudentRecordPage.disableButton.click();
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+        CommonMethods.acceptAlert();
+    }
+
+    /**
+     * This method selects the option from the reason drop-down list.
+     *
+     * @param reasonText The text of the reason option to be selected from the drop-down list.
+     */
+    public static void selects_for_reason_drop_down(String reasonText) {
+        CommonMethods.sleep(3000);
+        CommonMethods.waitForVisibility(abilityToDisableAndEnableStudentRecordPage.reasonDropDown);
+        CommonMethods.selectDropDownValue(reasonText, abilityToDisableAndEnableStudentRecordPage.reasonDropDown);
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /**
+     * Logs a screenshot and clicks on the save button.
+     */
+    public static void user_clicks_on_save_button() {
+        CucumberLogUtils.logScreenShot();
+        abilityToDisableAndEnableStudentRecordPage.saveButton.click();
+    }
+
+    /**
+     * This method simulates a user clicking on the disabled students sub-module in a software system.
+     * It performs the following actions:
+     * 1. Logs a screenshot of the current screen using CucumberLogUtils.logScreenShot().
+     * 2. Pauses the execution for 3000 milliseconds using CommonMethods.sleep(3000).
+     * 3. Waits for the disabled students sub-module element to be clickable using CommonMethods.waitForClickability().
+     * 4. Clicks on the disabled students sub-module element.
+     *
+     * @since 1.0
+     */
+    public static void user_clicks_on_disabled_students_sub_module() {
+        CucumberLogUtils.logScreenShot();
+        CommonMethods.sleep(3000);
+        CommonMethods.waitForClickability(abilityToDisableAndEnableStudentRecordPage.disabledStudentsSubmodule);
+        abilityToDisableAndEnableStudentRecordPage.disabledStudentsSubmodule.click();
+    }
+
+    /**
+     * This method performs the following steps:
+     * 1. Clicks on the enable button.
+     * 2. Verifies that the displayed alert text is as expected.
+     * 3. Accepts the alert.
+     * 4. Logs a screen shot.
+     *
+     * @param expectedAlertText the expected alert text to be displayed
+     */
+    public static void user_clicks_on_enable_button_and_accepting_alert(String expectedAlertText) {
+        abilityToDisableAndEnableStudentRecordPage.enableButton.click();
+        CommonMethods.assertEquals(CommonMethods.getAlertText(), expectedAlertText);
+        CommonMethods.acceptAlert();
+        CucumberLogUtils.logScreenShot();
     }
 }

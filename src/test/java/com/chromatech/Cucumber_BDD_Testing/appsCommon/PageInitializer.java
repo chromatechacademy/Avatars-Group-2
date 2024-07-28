@@ -26,8 +26,10 @@ public class PageInitializer {
     public static ExpensesModulePage expensesModule;
     public static ClassAndSectionsPage classAndSectionsPage;
     public static AbilityToAddAndDeleteSectionsPage abilityToAddAndDeleteSectionsPage;
+    public static AbilityToDisableAndEnableStudentRecordPage abilityToDisableAndEnableStudentRecordPage;
 
     public static void initializeAllPages() {
+        abilityToDisableAndEnableStudentRecordPage = new AbilityToDisableAndEnableStudentRecordPage();
         abilityToAddAndDeleteSectionsPage = new AbilityToAddAndDeleteSectionsPage();
         classAndSectionsPage = new ClassAndSectionsPage();
         homeworkModulePage = new HomeworkModulePage();
