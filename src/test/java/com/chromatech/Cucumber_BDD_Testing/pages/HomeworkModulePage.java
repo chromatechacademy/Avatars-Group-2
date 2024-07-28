@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class HomeworkModulePage {
 
     public HomeworkModulePage() {
-
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 
