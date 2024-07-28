@@ -140,6 +140,34 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Surefire Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <systemPropertyVariables>
+                        <!-- Pass the RetryListener through TestNG listeners -->
+                        <listener>com.chromatech.Cucumber_BDD_Testing.appsCommon.RetryListener</listener>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.1.0</version>
             </plugin>
