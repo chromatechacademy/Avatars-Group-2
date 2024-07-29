@@ -8,7 +8,7 @@ Feature: Fees Collection Module
     And clicks on Sign In button
     Then the user is successfully directed to the dashboard page "https://mexil.it/chroma/admin/admin/dashboard"
     When the user clicks on Fees Collection module
-    Then the following submodules display
+    Then the following submodules displays
       | Collect Fees        |
       | Search Fees Payment |
       | Search Due Fees     |

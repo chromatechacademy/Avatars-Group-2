@@ -1,6 +1,6 @@
 Feature: Navigation Module
 
-  @Regression @AG2CP-3 @yuriy @Progression
+  @Regression @AG2CP-3 @yuriy
   Scenario: Display submodules on Fees Collection Module
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
