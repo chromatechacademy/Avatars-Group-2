@@ -1,6 +1,6 @@
 Feature: Student Admission Scenario
 
-  @Regression @AG2CP-12 @ira
+  @Regression @AG2CP-12 @ira @Progression
   Scenario: Student Admission Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
@@ -24,7 +24,7 @@ Feature: Student Admission Scenario
     And enters last name "Johnson"
     And selects "Female" from gender drop down
     And selects "09/12/1999" for Date of Birth Calendar
-    And selects "Selenium" from category drop down
+    And selects "Category" from category drop down
     And enters email "emma.johnson@gmail.com"
     And selects "07/17/2024" for Admission Date Calendar Day
     And selects "B+" from Blood Group drop down
@@ -74,7 +74,7 @@ Feature: Student Admission Scenario
     And enters last name "<Last Name>"
     And selects "<Gender>" from gender drop down
     And selects "<Date Of Birth>" for Date of Birth Calendar
-    And selects "Selenium" from category drop down
+    And selects "Category" from category drop down
     And enters email "<Student Email>"
     And selects "<Admission Date>" for Admission Date Calendar Day
     And selects "<Blood Type>" from Blood Group drop down
