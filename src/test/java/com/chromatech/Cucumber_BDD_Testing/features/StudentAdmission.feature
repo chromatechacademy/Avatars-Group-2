@@ -50,7 +50,7 @@ Feature: Student Admission Scenario
     And clicks on the checkbox with the unique admission number "0073"
     And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
 
-  @Regression @AG2CP-19 @yuriy @Progression
+  @Regression @AG2CP-19 @yuriy
   Scenario Outline: Admitting Multiple Students Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
