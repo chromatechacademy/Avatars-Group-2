@@ -16,7 +16,7 @@ Feature: Verifying Student Data Scenario
     And if the record admission number "200" exists user clicks on the checkbox
     And if the unique admission number exists clicks the Delete button and accepting alert "Are you sure you want to delete this?"
     And clicks on Student Admission sub module
-    And enters Unique Admission Number "200"
+    And enters Unique Admission Number "4123"
     And enters Roll Number "1234"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
@@ -65,5 +65,5 @@ Feature: Verifying Student Data Scenario
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
     And clicks on the Search button
-    And sends unique number to Search By Keyword text box "200"
-    Then all student data submitted with the record should display "200", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Selenium", "3476290614", "5'4", "105"
+    And sends unique number to Search By Keyword text box "4123"
+    Then all student data submitted with the record should display "4123", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Selenium", "3476290614", "5'4", "105"
