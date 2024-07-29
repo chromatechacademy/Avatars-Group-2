@@ -13,10 +13,10 @@ Feature: Verifying Student Data Scenario
     And selects "Cucumber Fundamentals" for the section drop-down
     And clicks on the Search button
     When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
-    And if the record admission number "30004" exists user clicks on the checkbox
+    And if the record admission number "9009" exists user clicks on the checkbox
     And if the unique admission number exists clicks the Delete button and accepting alert "Are you sure you want to delete this?"
     And clicks on Student Admission sub module
-    And enters Unique Admission Number "30004"
+    And enters Unique Admission Number "9009"
     And enters Roll Number "1234"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
@@ -65,5 +65,5 @@ Feature: Verifying Student Data Scenario
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
     And clicks on the Search button
-    And sends unique number to Search By Keyword text box "30004"
-    Then all student data submitted with the record should display "30004", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Category", "3476290614", "5'4", "105"
+    And sends unique number to Search By Keyword text box "9009"
+    Then all student data submitted with the record should display "9009", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Category", "3476290614", "5'4", "105"
