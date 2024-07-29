@@ -13,10 +13,10 @@ Feature:  Ability to disable and enable student records
     And selects "Cucumber Fundamentals" for the section drop-down
     And clicks on the Search button
     When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
-    And if the record admission number "400" exists user clicks on the checkbox
+    And if the record admission number "2121" exists user clicks on the checkbox
     And if the unique admission number exists clicks the Delete button and accepting alert "Are you sure you want to delete this?"
     And clicks on Student Admission sub module
-    And enters Unique Admission Number "500"
+    And enters Unique Admission Number "2121"
     And enters Roll Number "12334"
     And selects "SDET" for class drop down
     And selects "Cucumber Fundamentals" for section drop down
@@ -45,7 +45,7 @@ Feature:  Ability to disable and enable student records
     And selects "TestDisableReason" for Reason drop down
     And user clicks on Save button
     Then user clicks on Disabled Students sub module
-    And user enters unique admission number "500" in Search by Keyword text box
+    And user enters unique admission number "2121" in Search by Keyword text box
     And user clicks on the Search button
     And user clicks on show btn
     And user clicks on Enable button and accepting alert "Are you sure? you want to enable this record"
@@ -54,5 +54,5 @@ Feature:  Ability to disable and enable student records
     And selects "Cucumber Fundamentals" for the section drop-down
     And clicks on the Search button
     When the user is on the "https://mexil.it/chroma/student/bulkdelete" page
-    And clicks on the checkbox with the unique admission number "500"
+    And clicks on the checkbox with the unique admission number "2121"
     And clicks the Delete button and accepting alert "Are you sure you want to delete this?"
