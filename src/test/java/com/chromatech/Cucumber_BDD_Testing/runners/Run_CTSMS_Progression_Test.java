@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/com/chromatech/Cucumber_BDD_Testing/features",
         glue = {"com.chromatech.Cucumber_BDD_Testing.steps", "Hooks"},
         tags = "@Progression",
-        dryRun = false
+        dryRun = true
 )
 
 public class Run_CTSMS_Progression_Test extends AbstractTestNGCucumberTests {
