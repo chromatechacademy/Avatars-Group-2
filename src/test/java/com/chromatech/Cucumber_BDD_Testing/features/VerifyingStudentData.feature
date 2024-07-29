@@ -66,4 +66,4 @@ Feature: Verifying Student Data Scenario
     And selects "Cucumber Fundamentals" for section drop down
     And clicks on the Search button
     And sends unique number to Search By Keyword text box "30004"
-    Then all student data submitted with the record should display "30004", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Selenium", "3476290614", "5'4", "105"
+    Then all student data submitted with the record should display "30004", "Helen Johnson", "SDET(Cucumber Fundamentals)", "Carl Johnson", "09/12/1999", "Female", "Category", "3476290614", "5'4", "105"
