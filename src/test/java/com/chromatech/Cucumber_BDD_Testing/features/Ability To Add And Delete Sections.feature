@@ -1,6 +1,6 @@
 Feature: Ability to add and delete sections Scenario
 
-  @Regression @AG2CP-17 @ira
+  @Regression @AG2CP-17 @ira @Smoke
   Scenario: Ability to add and delete sections Scenario
     Given a Chroma Tech Academy teacher or admin is on the login page "https://chroma.mexil.it/site/login/"
     When the user enters username "general@teacher.com" in username text box
