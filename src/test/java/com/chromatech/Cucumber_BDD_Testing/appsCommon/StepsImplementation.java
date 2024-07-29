@@ -937,6 +937,7 @@ public class StepsImplementation extends PageInitializer {
      * @param sdetText the text of the option to be selected
      */
     public static void selects_for_the_class_drop_down(String sdetText) {
+        CommonMethods.sleep(1000);
         CommonMethods.waitForVisibility(studentAdmissionPage.classDropDownBox);
         CommonMethods.selectDropDownValue(sdetText, studentAdmissionPage.classDropDownBox);
         CucumberLogUtils.logScreenShot();
@@ -948,6 +949,7 @@ public class StepsImplementation extends PageInitializer {
      * @param cucumberFundamentalsText The value to be selected in the section drop down box.
      */
     public static void selects_for_the_section_drop_down(String cucumberFundamentalsText) {
+        CommonMethods.sleep(1000);
         CommonMethods.selectDropDownValue(cucumberFundamentalsText, studentAdmissionPage.sectionDropDownBox);
         CucumberLogUtils.logScreenShot();
     }
@@ -957,6 +959,7 @@ public class StepsImplementation extends PageInitializer {
      * This method performs the action of clicking on the search button
      */
     public static void clicks_on_the_search_button() {
+        CommonMethods.sleep(1000);
         CommonMethods.click(studentAdmissionPage.searchButton);
         CucumberLogUtils.logScreenShot();
     }
